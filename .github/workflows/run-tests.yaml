@@ -24,28 +24,27 @@ jobs:
             - 'tests/**'
             - '.github/workflows/run-tests.yaml'
 
+
+  # todo: add pytest argument to handle one test at a time, and then run them as matrix
+  # find-feature:
+  #   needs: [changes]  
+  #   if: ${{ (needs.changes.outputs.relevant_files == 'true') || (github.event_name	== 'workflow_dispatch') }}
+  #   runs-on: ubuntu-latest
+  #   name: Find folders
+  #   outputs:
+  #     changed_features: ${{ steps.list-folders.outputs.folders }}
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - id: list-folders
+  #       uses: ./.github/actions/list-folders-action
+  #       with:
+  #         path: ./tests/resources/test_feature_definitions
+
+
   run-tests:
     needs: [changes]  
     if: ${{ (needs.changes.outputs.relevant_files == 'true') || (github.event_name	== 'workflow_dispatch') }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {
-            subtest_dir: "tests/apt"
-          }
-          - {
-            subtest_dir: "tests/apt_get"
-          }
-          - {
-            subtest_dir: "tests/aptitude"
-          }
-          - {
-            subtest_dir: "tests/gh_release"
-          }
-
-
     runs-on: ubuntu-latest
     
     steps:
@@ -75,4 +74,4 @@ jobs:
           pip install -r requirements.txt -r requirements-dev.txt
       - name: "Test with pytest"
         run: |
-          python -m pytest -s -v ${{ matrix.config.subtest_dir }}
+          python -m pytest -s -v ./tests
