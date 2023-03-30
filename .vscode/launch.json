@@ -14,18 +14,6 @@
         },
 
         {
-            "name": "debug --release-version",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/minilayer/__main__.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "--release-version",
-                
-            ] 
-        },
-        {
             "name": "debug --help",
             "type": "python",
             "request": "launch",
@@ -49,66 +37,7 @@
                 
             ] 
         },
-        {
-            "name": "debug install feature",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/minilayer/__main__.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "install",
-                "devcontainer-feature",
-                "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
-                "--option",
-                "command=\"pip3 install packaging==21.3\""
-            ] 
-        },
-        {
-            "name": "debug install apt-get",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/minilayer/__main__.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "install",
-                "apt-get",
-                "wget",
-            ] 
-        },
-        {
-            "name": "debug install apt-get with ppa",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/minilayer/__main__.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "install",
-                "apt-get",
-                "wget",
-                "--ppa",
-                "ppa:deadsnakes/ppa",
-            ] 
-        },
-        {
-            "name": "debug install gh-release",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/minilayer/__main__.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "sudo": true, 
-            "args": [
-                "install",
-                "gh-release",
-                "cli/cli",
-                "gh",
-                "--force"
-            ] 
-        },
-
+      
         {
             "name": "Debug Tests",
             "type": "python",

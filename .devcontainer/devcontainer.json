@@ -18,5 +18,5 @@
         "ghcr.io/lukewiwa/features/shellcheck:0": {},
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
-    "postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > postCreateCommand.log"
+    "postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > ./.devcontainer/postCreateCommand.log"
 }

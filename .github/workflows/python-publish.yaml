@@ -8,12 +8,11 @@ permissions:
   discussions: write
 
 jobs:
-  release-publish:
-    uses: ./.github/workflows/release-binaries-on-ec2-all.yaml
+  run-tests:
+    uses: ./.github/workflows/run-tests.yaml
     secrets: inherit
 
   python-publish:
-    needs: [release-publish]  
 
     runs-on: ubuntu-latest
 
