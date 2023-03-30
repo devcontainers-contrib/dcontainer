@@ -2,6 +2,12 @@ name: Pypi Package
 
 on:
   workflow_dispatch:
+    inputs:
+      run_tests:
+        type: boolean
+        description: 'Run tests'
+        required: true
+        default: true
 
 permissions:
   contents: write
@@ -9,11 +15,13 @@ permissions:
 
 jobs:
   run-tests:
+    if: ${{ github.event_name != 'workflow_dispatch'}} || ${{  github.event_name == 'workflow_dispatch' && inputs.run_tests }}
     uses: ./.github/workflows/run-tests.yaml
     secrets: inherit
 
   python-publish:
-
+    # todo: figure out needs
+    
     runs-on: ubuntu-latest
 
     steps:
