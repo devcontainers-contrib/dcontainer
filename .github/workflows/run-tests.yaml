@@ -2,7 +2,19 @@ name: Tests
 
 on:
   workflow_dispatch:
+    inputs:
+      enabled:
+        type: boolean
+        description: 'enabled'
+        default: true
+
   workflow_call:
+    inputs:
+      enabled:
+        type: boolean
+        description: 'enabled'
+        default: true
+
   pull_request:
   push:
     branches:
@@ -10,6 +22,8 @@ on:
 
 jobs:
   changes:
+    if: ${{ inputs.enabled }}
+
     runs-on: ubuntu-latest
 
     outputs:
