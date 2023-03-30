@@ -6,5 +6,6 @@ gitpython
 build 
 setuptools 
 wheel  
+pyinvoke
 setuptools-scm 
 packaging
