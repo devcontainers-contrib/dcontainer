@@ -23,6 +23,8 @@ jobs:
             - 'dcontainer/**'
             - 'tests/**'
             - '.github/workflows/run-tests.yaml'
+            - 'requirements.txt'
+            - 'requirements-dev.txt'
 
 
   # todo: add pytest argument to handle one test at a time, and then run them as matrix
