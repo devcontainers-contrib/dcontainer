@@ -3,11 +3,9 @@ from typing import Dict, Optional, Union
 
 from easyfs import File
 
+from dcontainer.devcontainer.models.devcontainer_feature import FeatureOption
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependencies,
-)
-from dcontainer.devcontainer.models.devcontainer_feature import (
-    FeatureOption,
 )
 
 logger = logging.getLogger(__name__)

@@ -177,7 +177,9 @@ class LibraryScriptsSH(File):
 
     def to_str(self):
         try:
-            nanolayer_version = self.nanolayer_version or resolve_nanolayer_release_version()
+            nanolayer_version = (
+                self.nanolayer_version or resolve_nanolayer_release_version()
+            )
         except Exception as e:
             raise ValueError(
                 "could not resolve nanolayer version because of error, please manually set nanolayer_version release_verison"

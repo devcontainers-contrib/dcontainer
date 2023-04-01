@@ -12,7 +12,9 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
 class OCIFeatureGenerator:
     @staticmethod
     def generate(
-        feature_definition: str, output_dir: str, nanolayer_version: Optional[str] = None
+        feature_definition: str,
+        output_dir: str,
+        nanolayer_version: Optional[str] = None,
     ) -> None:
         definition_model = FeatureDefinition.parse_file(feature_definition)
         # create virtual file systm directory using easyfs
