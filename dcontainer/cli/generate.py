@@ -19,7 +19,6 @@ def generate_command(
     output_dir: pathlib.Path,
     release_version: Optional[str] = None,
 ) -> None:
-    try:
 
     OCIFeatureGenerator.generate(
         feature_definition=feature_definition.as_posix(),
