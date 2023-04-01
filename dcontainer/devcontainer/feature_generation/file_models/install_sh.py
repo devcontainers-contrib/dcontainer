@@ -28,9 +28,7 @@ source ./library_scripts.sh
 
 ensure_nanolayer nanolayer_location
 
-
 {dependency_installation_lines}
-
 
 {install_command}
 
