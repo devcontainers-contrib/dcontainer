@@ -2,7 +2,8 @@ import json
 import urllib
 import urllib.request
 from importlib.metadata import version
-from typing import List, Optional
+import importlib
+from typing import List
 
 OWN_REPO = "devcontainers-contrib/dcontainer"
 NANOLAYER_REPO = "devcontainers-contrib/nanolayer"
@@ -35,9 +36,13 @@ def resolve_own_package_version() -> str:
 
 
 def resolve_nanolayer_release_version() -> str:
-    package_version = _resolve_package_version(NANOLAYER_PACKAGE)
-    tags = _get_github_tags(NANOLAYER_REPO)
+    try:
+        package_version = _resolve_package_version(NANOLAYER_PACKAGE)
+    except importlib.metadata.PackageNotFoundError:
+        package_version = None
+
     if package_version is not None:
+        tags = _get_github_tags(NANOLAYER_REPO)
         if f"v{package_version}" in tags:
             return f"v{package_version}"
 
