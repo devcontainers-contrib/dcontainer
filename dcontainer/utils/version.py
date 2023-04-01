@@ -5,7 +5,7 @@ from importlib.metadata import version
 from typing import List, Optional
 
 OWN_REPO = "devcontainers-contrib/dcontainer"
-NANOLAYER_REPO = "devcontainers-contrib/cli"
+NANOLAYER_REPO = "devcontainers-contrib/nanolayer"
 OWN_PACKAGE = "dcontainer"
 NANOLAYER_PACKAGE = "nanolayer"
 
