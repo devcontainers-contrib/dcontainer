@@ -1,16 +1,16 @@
-# MiniLayer CLI
+# dcontainer CLI
 
 
 ## Installation
 
 
-`pip install minilayer[generate]`
+`pip install dcontainer`
 
 
 ### Feature Generation:
 
 ```
-Usage: python -m minilayer generate devcontainer-feature [OPTIONS]
+Usage: python -m dcontainer generate devcontainer-feature [OPTIONS]
                                                         FEATURE_DEFINITION
                                                         OUTPUT_DIR
 
@@ -96,12 +96,12 @@ This is an *extended* version of the [devcontainer-feature.json](https://contain
 
 
 this will generate the Elixir feature 
-It assumes you have the minilayer cli already installed
+It assumes you have the dcontainer cli already installed
 
 ```sh
 git clone https://github.com/devcontainers-contrib/cli --depth 1
 cd cli
 
 
-minilayer generate devcontainer-feature "./test/resources/test_feature_definitions/elixir-asdf/feature-definition.json" "./output_dir"
+dcontainer generate devcontainer-feature "./test/resources/test_feature_definitions/elixir-asdf/feature-definition.json" "./output_dir"
 ```

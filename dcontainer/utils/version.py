@@ -5,9 +5,9 @@ from importlib.metadata import version
 from typing import List, Optional
 
 OWN_REPO = "devcontainers-contrib/dcontainer"
-MINILAYER_REPO = "devcontainers-contrib/cli"
+NANOLAYER_REPO = "devcontainers-contrib/cli"
 OWN_PACKAGE = "dcontainer"
-MINILAYER_PACKAGE = "minilayer"
+NANOLAYER_PACKAGE = "nanolayer"
 
 
 def _resolve_package_version(package: str) -> str:
@@ -34,11 +34,11 @@ def resolve_own_package_version() -> str:
     return _resolve_package_version(OWN_PACKAGE)
 
 
-def resolve_minilayer_release_version() -> str:
-    package_version = _resolve_package_version(MINILAYER_PACKAGE)
-    tags = _get_github_tags(MINILAYER_REPO)
+def resolve_nanolayer_release_version() -> str:
+    package_version = _resolve_package_version(NANOLAYER_PACKAGE)
+    tags = _get_github_tags(NANOLAYER_REPO)
     if package_version is not None:
         if f"v{package_version}" in tags:
             return f"v{package_version}"
 
-    return _get_latest_release(MINILAYER_REPO)
+    return _get_latest_release(NANOLAYER_REPO)

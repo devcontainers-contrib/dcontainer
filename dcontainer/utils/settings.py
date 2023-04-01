@@ -4,9 +4,9 @@ from typing import Optional
 from pydantic import BaseSettings
 
 
-class MiniLayerSettings(BaseSettings):
+class NanoLayerSettings(BaseSettings):
     class Config:
-        env_prefix = "MINILAYER_"
+        env_prefix = "NANOLAYER_"
 
     cli_location: str = ""
     propagate_cli_location: str = "1"
@@ -14,11 +14,11 @@ class MiniLayerSettings(BaseSettings):
     verbose: str = ""
 
 
-ENV_CLI_LOCATION = f"{MiniLayerSettings.Config.env_prefix}CLI_LOCATION"
+ENV_CLI_LOCATION = f"{NanoLayerSettings.Config.env_prefix}CLI_LOCATION"
 ENV_PROPAGATE_CLI_LOCATION = (
-    f"{MiniLayerSettings.Config.env_prefix}PROPAGATE_CLI_LOCATION"
+    f"{NanoLayerSettings.Config.env_prefix}PROPAGATE_CLI_LOCATION"
 )
 ENV_FORCE_CLI_INSTALLATION = (
-    f"{MiniLayerSettings.Config.env_prefix}FORCE_CLI_INSTALLATION"
+    f"{NanoLayerSettings.Config.env_prefix}FORCE_CLI_INSTALLATION"
 )
-ENV_VERBOSE = f"{MiniLayerSettings.Config.env_prefix}VERBOSE"
+ENV_VERBOSE = f"{NanoLayerSettings.Config.env_prefix}VERBOSE"

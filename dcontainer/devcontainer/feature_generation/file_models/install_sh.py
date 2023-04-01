@@ -13,7 +13,7 @@ from dcontainer.devcontainer.models.devcontainer_feature import (
 logger = logging.getLogger(__name__)
 
 
-SINGLE_DEPENDENCY = """$minilayer_location \\
+SINGLE_DEPENDENCY = """$nanolayer_location \\
     install \\
     devcontainer-feature \\
     "{feature_oci}" \\
@@ -26,7 +26,7 @@ set -e
 
 source ./library_scripts.sh
 
-ensure_minilayer minilayer_location
+ensure_nanolayer nanolayer_location
 
 
 {dependency_installation_lines}

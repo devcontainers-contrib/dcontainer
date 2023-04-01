@@ -12,13 +12,13 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
 class OCIFeatureGenerator:
     @staticmethod
     def generate(
-        feature_definition: str, output_dir: str, minilayer_version: Optional[str] = None
+        feature_definition: str, output_dir: str, nanolayer_version: Optional[str] = None
     ) -> None:
         definition_model = FeatureDefinition.parse_file(feature_definition)
         # create virtual file systm directory using easyfs
         virtual_dir = Directory()
         virtual_dir["src"] = SrcDir.from_definition_model(
-            definition_model=definition_model, minilayer_version=minilayer_version
+            definition_model=definition_model, nanolayer_version=nanolayer_version
         )
         virtual_dir["test"] = TestDir.from_definition_model(
             definition_model=definition_model

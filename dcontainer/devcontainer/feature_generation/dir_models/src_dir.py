@@ -17,14 +17,14 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
 class SrcDir(Directory):
     @classmethod
     def from_definition_model(
-        cls, definition_model: FeatureDefinition, minilayer_version: Optional[str] = None
+        cls, definition_model: FeatureDefinition, nanolayer_version: Optional[str] = None
     ) -> "Directory":
         feature_id = definition_model.id
 
         virtual_dir = {}
 
         virtual_dir[f"{feature_id}/library_scripts.sh"] = LibraryScriptsSH(
-            minilayer_version=minilayer_version,
+            nanolayer_version=nanolayer_version,
         )
 
         virtual_dir[f"{feature_id}/install.sh"] = InstallSH(

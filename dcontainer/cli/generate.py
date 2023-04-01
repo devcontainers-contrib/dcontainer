@@ -24,5 +24,5 @@ def generate_command(
     OCIFeatureGenerator.generate(
         feature_definition=feature_definition.as_posix(),
         output_dir=output_dir.as_posix(),
-        minilayer_version=release_version,
+        nanolayer_version=release_version,
     )

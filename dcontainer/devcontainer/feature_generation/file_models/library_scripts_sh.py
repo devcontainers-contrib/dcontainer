@@ -3,7 +3,7 @@ from typing import Optional
 from easyfs import File
 
 from dcontainer.utils.settings import ENV_CLI_LOCATION, ENV_FORCE_CLI_INSTALLATION
-from dcontainer.utils.version import resolve_minilayer_release_version
+from dcontainer.utils.version import resolve_nanolayer_release_version
 
 RELEASE_LINK = """{RELEASE_VERSION}"""
 
@@ -104,29 +104,29 @@ clean_download() {{
 }}
 
 
-ensure_minilayer() {{
-    # Ensure existance of the minilayer cli program
+ensure_nanolayer() {{
+    # Ensure existance of the nanolayer cli program
     local variable_name=$1
-    local minilayer_location=""
+    local nanolayer_location=""
 
-    # If possible - try to use an already installed minilayer
+    # If possible - try to use an already installed nanolayer
     if [[ -z "${{{force_cli_installation_env}}}" ]]; then
         if [[ -z "${{{cli_location_env}}}" ]]; then
-            if type minilayer >/dev/null 2>&1; then
-                echo "Using a pre-existing minilayer"
-                minilayer_location=minilayer
+            if type nanolayer >/dev/null 2>&1; then
+                echo "Using a pre-existing nanolayer"
+                nanolayer_location=nanolayer
             fi
         elif [ -f "${{{cli_location_env}}}" ] && [ -x "${{{cli_location_env}}}" ] ; then
-            echo "Using a pre-existing minilayer which were given in env varialbe"
-            minilayer_location=${{{cli_location_env}}}
+            echo "Using a pre-existing nanolayer which were given in env varialbe"
+            nanolayer_location=${{{cli_location_env}}}
         fi
     fi
 
     # If not previuse installation found, download it temporarly and delete at the end of the script 
-    if [[ -z "${{minilayer_location}}" ]]; then
+    if [[ -z "${{nanolayer_location}}" ]]; then
 
         if [ "$(uname -sm)" == "Linux x86_64" ] || [ "$(uname -sm)" == "Linux aarch64" ]; then
-            tmp_dir=$(mktemp -d -t minilayer-XXXXXXXXXX)
+            tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
 
             clean_up () {{
                 ARG=$?
@@ -142,14 +142,14 @@ ensure_minilayer() {{
                 clib_type=gnu
             fi
 
-            tar_filename=minilayer-"$(uname -m)"-unknown-linux-$clib_type.tgz
+            tar_filename=nanolayer-"$(uname -m)"-unknown-linux-$clib_type.tgz
 
             # clean download will minimize leftover in case a downloaderlike wget or curl need to be installed
-            clean_download https://github.com/devcontainers-contrib/cli/releases/download/{minilayer_version}/$tar_filename $tmp_dir/$tar_filename
+            clean_download https://github.com/devcontainers-contrib/cli/releases/download/{nanolayer_version}/$tar_filename $tmp_dir/$tar_filename
             
             tar xfzv $tmp_dir/$tar_filename -C "$tmp_dir"
-            chmod a+x $tmp_dir/minilayer
-            minilayer_location=$tmp_dir/minilayer
+            chmod a+x $tmp_dir/nanolayer
+            nanolayer_location=$tmp_dir/nanolayer
       
 
         else
@@ -159,7 +159,7 @@ ensure_minilayer() {{
     fi
 
     # Expose outside the resolved location
-    declare -g ${{variable_name}}=$minilayer_location
+    declare -g ${{variable_name}}=$nanolayer_location
 
 }}
 
@@ -170,21 +170,21 @@ ensure_minilayer() {{
 class LibraryScriptsSH(File):
     def __init__(
         self,
-        minilayer_version: Optional[str] = None,
+        nanolayer_version: Optional[str] = None,
     ) -> None:
-        self.minilayer_version = minilayer_version
+        self.nanolayer_version = nanolayer_version
         super().__init__(self.to_str().encode())
 
     def to_str(self):
         try:
-            minilayer_version = self.minilayer_version or resolve_minilayer_release_version()
+            nanolayer_version = self.nanolayer_version or resolve_nanolayer_release_version()
         except Exception as e:
             raise ValueError(
-                "could not resolve minilayer version because of error, please manually set minilayer_version release_verison"
+                "could not resolve nanolayer version because of error, please manually set nanolayer_version release_verison"
             ) from e
 
         return HEADER.format(
-            minilayer_version=minilayer_version,
+            nanolayer_version=nanolayer_version,
             force_cli_installation_env=ENV_FORCE_CLI_INSTALLATION,
             cli_location_env=ENV_CLI_LOCATION,
         )
