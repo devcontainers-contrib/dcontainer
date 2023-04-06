@@ -47,6 +47,7 @@ def test_feature_dir_generation(
         os.path.join(tmp_path_str, "src", feature_id, "devcontainer-feature.json")
     )
     assert os.path.isfile(os.path.join(tmp_path_str, "src", feature_id, "install.sh"))
+    assert os.path.isfile(os.path.join(tmp_path_str, "src", feature_id, "README.md"))
 
 
 @pytest.mark.parametrize(
