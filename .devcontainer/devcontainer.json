@@ -1,5 +1,5 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/universal:linux",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -14,6 +14,8 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/python:1": {},
+        "ghcr.io/devcontainers/features/node:1": {},
         "ghcr.io/devcontainers/features/common-utils:1": {},
         "ghcr.io/lukewiwa/features/shellcheck:0": {},
         "ghcr.io/devcontainers/features/github-cli:1": {}
