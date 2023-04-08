@@ -7,9 +7,10 @@ import shutil
 
 
 def generate_all_Feature_definitions(
-    feature_definitions_dir: str, output_dir: str ,remove_old_content: bool = True,
+    feature_definitions_dir: str, output_dir: str ,nanolayer_version: str,remove_old_content: bool = True,
 ) -> None:
-
+    assert nanolayer_version.startswith("v")
+    
     for feature_name in os.listdir(feature_definitions_dir):
         if remove_old_content and os.path.exists(os.path.join(
                     "test", feature_name
@@ -33,7 +34,7 @@ def generate_all_Feature_definitions(
                 )
             ),
             output_dir=Path(output_dir),
-            nanolayer_version="v0.4.0"
+            nanolayer_version=nanolayer_version
         )
 
 
