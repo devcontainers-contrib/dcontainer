@@ -8,6 +8,14 @@
     "description": "Dive is a tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image."
 },
 {
+    "repo": "gruntwork-io/terragrunt",
+    "target": "terragrunt",
+    "test_command": "terragrunt --version",
+    "id": "terragrunt",
+    "name": "Terragrunt",
+    "description": "Terragrunt is a thin wrapper that provides extra tools for keeping your configurations DRY, working with multiple Terraform modules, and managing remote state."
+},
+{
     "repo": "upx/upx",
     "target": "upx",
     "test_command": "upx --version",
