@@ -1,0 +1,41 @@
+{
+    "id": "hyperfine",
+    "version": "1.0.0",
+    "name": "hyperfine (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/hyperfine",
+    "description": "hyperfine is a command-line benchmarking tool.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.3",
+            "options": {
+                "repo": "sharkdp/hyperfine",
+                "target": "hyperfine",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "hyperfine --version"
+            ],
+            "options": {}
+        }
+    ]
+}

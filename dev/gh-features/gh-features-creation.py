@@ -1,3 +1,4 @@
+from pathlib import Path
 from dcontainer.devcontainer.models.devcontainer_feature import FeatureOptionItem2
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDefinition,
@@ -19,6 +20,8 @@ def generate_gh_feature_definitions(partial_feature_json: str, output_dir: str) 
         feature_definition_file = os.path.join(
             output_dir, partial_feature["id"], "feature-definition.json"
         )
+
+        Path(feature_definition_file).parent.mkdir(parents=True, exist_ok=True)
 
         feature_definition = FeatureDefinition(
             id=partial_feature["id"],

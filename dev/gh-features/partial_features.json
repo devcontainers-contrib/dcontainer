@@ -206,6 +206,6 @@
     "id": "hyperfine",
     "name": "hyperfine",
     "description": "hyperfine is a command-line benchmarking tool."
-},
+}
 
 ]

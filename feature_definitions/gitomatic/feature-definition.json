@@ -1,0 +1,41 @@
+{
+    "id": "gitomatic",
+    "version": "1.0.0",
+    "name": "git-o-matic (gitomatic) (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gitomatic",
+    "description": "gitomatic is a tool to monitor git repositories and automatically pull & push changes.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.3",
+            "options": {
+                "repo": "muesli/gitomatic",
+                "target": "gitomatic",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "type gitomatic"
+            ],
+            "options": {}
+        }
+    ]
+}
