@@ -1,0 +1,211 @@
+[
+{
+    "repo": "wagoodman/dive",
+    "target": "dive",
+    "test_command": "dive --version",
+    "id": "dive",
+    "name": "Dive",
+    "description": "Dive is a tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image."
+},
+{
+    "repo": "upx/upx",
+    "target": "upx",
+    "test_command": "upx --version",
+    "id": "upx",
+    "name": "UPX",
+    "description": "UPX is a free, secure, portable, extendable, high-performance executable packer for several executable formats."
+},
+{
+    "repo": "nektos/act",
+    "target": "act",
+    "test_command": "upx --version",
+    "id": "act",
+    "name": "act",
+    "description":  "Act is an open source project that allows you to run your github flow locally."
+},
+{
+    "repo": "zyedidia/eget",
+    "target": "eget",
+    "test_command": "eget --version",
+    "id": "eget",
+    "name": "Eget",
+    "description":  "Eget easily install prebuilt binaries from GitHub."
+},
+{
+    "repo": "jgm/pandoc",
+    "target": "pandoc",
+    "test_command": "pandoc --version",
+    "id": "pandoc",
+    "name": "Pandoc",
+    "description":  "Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library."
+},
+{
+    "repo": "ogham/exa",
+    "target": "exa",
+    "test_command": "exa --version",
+    "id": "exa",
+    "name": "exa",
+    "description": "exa is a modern replacement for ls."
+},
+{
+    "repo": "BurntSushi/ripgrep",
+    "target": "rg",
+    "test_command": "rg --version",
+    "id": "ripgrep",
+    "name": "ripgrep",
+    "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore."
+},
+{
+    "repo": "junegunn/fzf",
+    "target": "fzf",
+    "test_command": "fzf --version",
+    "id": "fzf",
+    "name": "fzf",
+    "description": "fzf is a general-purpose command-line fuzzy finder."
+},
+{
+    "repo": "sharkdp/fd",
+    "target": "fd",
+    "test_command": "fd --version",
+    "id": "fd",
+    "name": "fd",
+    "description": "fd is a simple, fast and user-friendly alternative to 'find'."
+},
+{
+    "repo": "zachjs/sv2v",
+    "target": "sv2v",
+    "test_command": "sv2v --version",
+    "id": "sv2v",
+    "name": "sv2v (SystemVerilog to Verilog)",
+    "description": "sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs."
+},
+{
+    "repo": "ClementTsang/bottom",
+    "target": "btm",
+    "test_command": "btm --version",
+    "id": "btm",
+    "name": "bottom",
+    "description": "bottom is a customizable cross-platform graphical process/system monitor for the terminal."
+},
+{
+    "repo": "muesli/duf",
+    "target": "duf",
+    "test_command": "duf --version",
+    "id": "duf",
+    "name": "duf (Disk Usage/Free Utility)",
+    "description": "duf is a better 'df' alternative."
+},
+{
+    "repo": "sigoden/dufs",
+    "target": "dufs",
+    "test_command": "dufs --version",
+    "id": "dufs",
+    "name": "Dufs",
+    "description": "Dufs is a distinctive utility file server that supports static serving, uploading, searching, accessing control, webdav and more."
+},
+{
+    "repo": "Byron/dua-cli",
+    "target": "dua",
+    "test_command": "dua --version",
+    "id": "dua",
+    "name": "dua (Disk Usage Analyzer)",
+    "description": "dua (Disk Usage Analyzer) is a tool to conveniently learn about the usage of disk space of a given directory. It's parallel by default and will max out your SSD, providing relevant information as fast as possible. Optionally delete superfluous data, and do so more quickly than rm."
+},
+{
+    "repo": "muesli/beehive",
+    "target": "beehive",
+    "test_command": "beehive --version",
+    "id": "beehive",
+    "name": "Beehive",
+    "description": "Beehive is an event and agent system, which allows you to create your own agents that perform automated tasks triggered by events and filters."
+},
+{
+    "repo": "muesli/gitomatic",
+    "target": "gitomatic",
+    "test_command": "type gitomatic",
+    "id": "gitomatic",
+    "name": "git-o-matic (gitomatic)",
+    "description": "gitomatic is a tool to monitor git repositories and automatically pull & push changes."
+},
+{
+    "repo": "muesli/gitty",
+    "target": "gitty",
+    "test_command": "gitty --version",
+    "id": "gitty",
+    "name": "gitty",
+    "description": "gitty is a smart little CLI helper for git projects, that shows you all the relevant issues, pull requests and changes at a quick glance, right on the command-line."
+},
+{
+    "repo": "rclone/rclone",
+    "target": "rclone",
+    "test_command": "rclone --version",
+    "id": "rclone",
+    "name": "Rclone",
+    "description": "Rclone ('rsync for cloud storage') is a command-line program to sync files and directories to and from different cloud storage providers."
+},
+{
+    "repo": "FiloSottile/mkcert",
+    "target": "mkcert",
+    "test_command": "mkcert --version",
+    "id": "mkcert",
+    "name": "mkcert",
+    "description": "mkcert is a simple tool for making locally-trusted development certificates."
+},
+{
+    "repo": "filosottile/age",
+    "target": "age",
+    "test_command": "age --version",
+    "id": "age",
+    "name": "mkcert",
+    "description": "age is a simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability."
+},
+{
+    "repo": "filosottile/age",
+    "target": "age-keygen",
+    "test_command": "age-keygen --version",
+    "id": "age-keygen",
+    "name": "age-keygen",
+    "description": "age-keygen generate a key pair for use with age."
+},
+{
+    "repo": "mozilla/sops",
+    "target": "sops",
+    "test_command": "sops --version",
+    "id": "sops",
+    "name": "sops",
+    "description": "sops is an editor of encrypted files that supports YAML, JSON, ENV, INI and BINARY formats and encrypts with AWS KMS, GCP KMS, Azure Key Vault, age, and PGP."
+},
+{
+    "repo": "kubernetes-sigs/kind",
+    "target": "kind",
+    "test_command": "kind --version",
+    "id": "kind",
+    "name": "kind",
+    "description": "kind is a tool for running local Kubernetes clusters using Docker container 'nodes'. kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI."
+},
+{
+    "repo": "marcosnils/bin",
+    "target": "bin",
+    "test_command": "bin --version",
+    "id": "bin",
+    "name": "bin",
+    "description": "bin is an effortless binary manager. It manages binary files downloaded from different sources."
+},
+{
+    "repo": "marwanhawari/stew",
+    "target": "stew",
+    "test_command": "stew --version",
+    "id": "stew",
+    "name": "stew",
+    "description": "stew is an independent package manager for compiled binaries."
+},
+{
+    "repo": "sharkdp/hyperfine",
+    "target": "hyperfine",
+    "test_command": "hyperfine --version",
+    "id": "hyperfine",
+    "name": "hyperfine",
+    "description": "hyperfine is a command-line benchmarking tool."
+},
+
+]

@@ -60,6 +60,18 @@
                 "repo": "cli/cli",
                 "target": "gh"
             }
+        },
+        {
+            "name": "test_act",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "act --version"
+            ],
+            "options": {
+                "version": "latest",
+                "repo": "nektos/act",
+                "target": "act"
+            }
         }
     ]
 }

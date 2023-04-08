@@ -1,0 +1,35 @@
+[
+    {
+        "package": "tmate",
+        "test_command": "tmate -V",
+        "id": "tmate",
+        "name": "tmate",
+        "description": "tmate is a terminal multiplexer with instant terminal sharing. It enables a number of terminals to be created, accessed, and controlled from a single screen and be shared with another mates."
+    },
+    {
+        "package": "neofetch",
+        "test_command": "neofetch --version",
+        "id": "neofetch",
+        "name": "Neofetch",
+        "description": "Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way."
+    },
+    
+    {
+        "package": "ncdu",
+        "test_command": "ncdu --version",
+        "id": "ncdu",
+        "name": "ncdu",
+        "description": "ncdu (NCurses Disk Usage) is a disk utility for Unix systems."
+    },
+    
+    
+    {
+        "package": "micro",
+        "test_command": "micro --version",
+        "id": "micro",
+        "name": "micro",
+        "description": "micro is a terminal-based text editor that aims to be easy to use and intuitive, while also taking advantage of the capabilities of modern terminals."
+    }
+    
+    
+    ]
