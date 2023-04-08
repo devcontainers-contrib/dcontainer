@@ -8,7 +8,7 @@
     },
     {
         "package": "neofetch",
-        "test_command": "neofetch --version",
+        "test_command": "neofetch --print_config",
         "id": "neofetch",
         "name": "Neofetch",
         "description": "Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way."
@@ -21,8 +21,6 @@
         "name": "ncdu",
         "description": "ncdu (NCurses Disk Usage) is a disk utility for Unix systems."
     },
-    
-    
     {
         "package": "micro",
         "test_command": "micro --version",
