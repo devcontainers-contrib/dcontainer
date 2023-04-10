@@ -30,14 +30,13 @@ class SrcDir(Directory):
 
         virtual_dir = {}
 
-        virtual_dir[f"{feature_id}/library_scripts.sh"] = LibraryScriptsSH(
-            nanolayer_version=nanolayer_version,
-        )
+        virtual_dir[f"{feature_id}/library_scripts.sh"] = LibraryScriptsSH()
 
         virtual_dir[f"{feature_id}/install.sh"] = InstallSH(
             install_command=definition_model.install_command,
             options=definition_model.options,
             dependencies=definition_model.dependencies,
+            nanolayer_version=nanolayer_version,
         )
         virtual_dir[f"{feature_id}/README.md"] = ReadmeMD(
             definition_model=definition_model,
