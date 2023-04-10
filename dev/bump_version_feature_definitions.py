@@ -26,7 +26,7 @@ def is_dependent_of(feature_name: str, feature_definition: FeatureDefinition) ->
     return False
 
 def bump_version_feature_definitions(
-    feature_definitions_dir: str, version_type: VersionType, dependent_of: Optional[str] = None
+    feature_definitions_dir: str, version_type: VersionType, depends_on: Optional[str] = None
 ) -> None:
     for feature_name in os.listdir(feature_definitions_dir):
         feature_definition_file = os.path.join(
@@ -35,7 +35,7 @@ def bump_version_feature_definitions(
 
         feature_definition = FeatureDefinition.parse_file(feature_definition_file)
 
-        if dependent_of is not None and not is_dependent_of(dependent_of, feature_definition):
+        if depends_on is not None and not is_dependent_of(depends_on, feature_definition):
             continue
 
         semver_version = semver.VersionInfo.parse(feature_definition.version)
