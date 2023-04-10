@@ -30,7 +30,7 @@ source ./library_scripts.sh
 # `ensure_nanolayer` is a bash function that will find any existing nanolayer installations, 
 # and if missing - will download a temporary copy that automatically get deleted at the end 
 # of the script
-ensure_nanolayer nanolayer_location {nanolayer_version}
+ensure_nanolayer nanolayer_location "{nanolayer_version}"
 
 
 {dependency_installation_lines}
