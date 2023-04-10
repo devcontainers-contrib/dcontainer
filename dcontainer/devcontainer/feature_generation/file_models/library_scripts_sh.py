@@ -3,9 +3,7 @@ from typing import Optional
 from easyfs import File
 
 from dcontainer.utils.settings import ENV_CLI_LOCATION, ENV_FORCE_CLI_INSTALLATION
-from dcontainer.utils.version import resolve_nanolayer_release_version
 
-RELEASE_LINK = """{RELEASE_VERSION}"""
 
 HEADER = """#!/bin/bash -i
 
@@ -107,19 +105,41 @@ clean_download() {{
 ensure_nanolayer() {{
     # Ensure existance of the nanolayer cli program
     local variable_name=$1
+
+    local required_version=$2
+    # normalize version
+    if ! [[ $required_version == v* ]]; then
+        required_version=v$required_version
+    fi
+
     local nanolayer_location=""
 
     # If possible - try to use an already installed nanolayer
     if [[ -z "${{{force_cli_installation_env}}}" ]]; then
         if [[ -z "${{{cli_location_env}}}" ]]; then
             if type nanolayer >/dev/null 2>&1; then
-                echo "Using a pre-existing nanolayer"
+                echo "Found a pre-existing nanolayer in PATH"
                 nanolayer_location=nanolayer
             fi
         elif [ -f "${{{cli_location_env}}}" ] && [ -x "${{{cli_location_env}}}" ] ; then
-            echo "Using a pre-existing nanolayer which were given in env varialbe"
             nanolayer_location=${{{cli_location_env}}}
+            echo "Found a pre-existing nanolayer which were given in env varialbe: $nanolayer_location"
         fi
+
+        # make sure its of the required version
+        if ! [[ -z "${{nanolayer_location}}" ]]; then
+            local current_version
+            current_version=$($nanolayer_location --version)
+            if ! [[ $current_version == v* ]]; then
+                current_version=v$current_version
+            fi
+
+            if ! [ $current_version == $required_version ]; then
+                echo "skipping usage of pre-existing nanolayer. (required version $required_version does not match existing version $current_version)"
+                nanolayer_location=""
+            fi
+        fi
+
     fi
 
     # If not previuse installation found, download it temporarly and delete at the end of the script 
@@ -145,7 +165,7 @@ ensure_nanolayer() {{
             tar_filename=nanolayer-"$(uname -m)"-unknown-linux-$clib_type.tgz
 
             # clean download will minimize leftover in case a downloaderlike wget or curl need to be installed
-            clean_download https://github.com/devcontainers-contrib/cli/releases/download/{nanolayer_version}/$tar_filename $tmp_dir/$tar_filename
+            clean_download https://github.com/devcontainers-contrib/cli/releases/download/$required_version/$tar_filename $tmp_dir/$tar_filename
             
             tar xfzv $tmp_dir/$tar_filename -C "$tmp_dir"
             chmod a+x $tmp_dir/nanolayer
@@ -170,23 +190,11 @@ ensure_nanolayer() {{
 class LibraryScriptsSH(File):
     def __init__(
         self,
-        nanolayer_version: Optional[str] = None,
     ) -> None:
-        self.nanolayer_version = nanolayer_version
         super().__init__(self.to_str().encode())
 
     def to_str(self):
-        try:
-            nanolayer_version = (
-                self.nanolayer_version or resolve_nanolayer_release_version()
-            )
-        except Exception as e:
-            raise ValueError(
-                "could not resolve nanolayer version because of error, please manually set nanolayer_version release_verison"
-            ) from e
-
         return HEADER.format(
-            nanolayer_version=nanolayer_version,
             force_cli_installation_env=ENV_FORCE_CLI_INSTALLATION,
             cli_location_env=ENV_CLI_LOCATION,
         )

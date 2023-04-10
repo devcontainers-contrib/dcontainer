@@ -7,6 +7,7 @@ from dcontainer.devcontainer.models.devcontainer_feature import FeatureOption
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependencies,
 )
+from dcontainer.utils.version import resolve_nanolayer_release_version
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +30,7 @@ source ./library_scripts.sh
 # `ensure_nanolayer` is a bash function that will find any existing nanolayer installations, 
 # and if missing - will download a temporary copy that automatically get deleted at the end 
 # of the script
-ensure_nanolayer nanolayer_location
+ensure_nanolayer nanolayer_location {nanolayer_version}
 
 
 {dependency_installation_lines}
@@ -47,10 +48,18 @@ class InstallSH(File):
         install_command: str,
         dependencies: Optional[FeatureDependencies],
         options: Optional[Dict[str, FeatureOption]],
+        nanolayer_version: Optional[str] = None,
     ) -> None:
         self.install_command = install_command
         self.dependencies = dependencies or []
         self.options = options
+        try:
+            self.nanolayer_version = nanolayer_version or resolve_nanolayer_release_version()
+        except Exception as e:
+            raise ValueError(
+                "could not resolve nanolayer version because of error, please manually set nanolayer_version release_verison"
+            ) from e
+    
         super().__init__(content=self.to_str().encode())
 
     def to_str(self) -> str:
@@ -72,6 +81,7 @@ class InstallSH(File):
         return HEADER.format(
             dependency_installation_lines=dependency_installation_lines,
             install_command=self.install_command,
+            nanolayer_version=self.nanolayer_version,
         )
 
     @staticmethod

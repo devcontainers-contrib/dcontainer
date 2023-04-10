@@ -26,7 +26,7 @@
 {
     "repo": "nektos/act",
     "target": "act",
-    "test_command": "upx --version",
+    "test_command": "act --version",
     "id": "act",
     "name": "act",
     "description":  "Act is an open source project that allows you to run your github flow locally."
