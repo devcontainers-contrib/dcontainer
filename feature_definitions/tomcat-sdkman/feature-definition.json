@@ -43,7 +43,20 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers/features/java:1.1.1",
+            "feature": "ghcr.io/ebaskoro/devcontainer-features/sdkman:1.0.0",
+            "options": {
+                "candidate": "none",  
+                "version": "none"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "echo sdkman_auto_answer=true > ${SDKMAN_DIR}/etc/config"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers/features/java:1.2.1",
             "options": {
                 "jdkDistro": "$options.jdkDistro",
                 "version": "$options.jdkVersion"

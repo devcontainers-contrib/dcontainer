@@ -1,6 +1,6 @@
 {
     "id": "gh-release",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "name": "Github Release",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gh-release",
     "description": "Github Release feature will download, extract and add to path a release binary from a given repo",
@@ -59,6 +59,18 @@
                 "version": "latest",
                 "repo": "cli/cli",
                 "target": "gh"
+            }
+        },
+        {
+            "name": "test_act",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "act --version"
+            ],
+            "options": {
+                "version": "latest",
+                "repo": "nektos/act",
+                "target": "act"
             }
         }
     ]
