@@ -69,11 +69,18 @@ class InstallSH(File):
             for param_name, param_value in feature_dependency.options.items():
                 if isinstance(param_value, str):
                     if InstallSH.is_param_ref(param_value):
-                        param_value = InstallSH.resolve_param_ref(
-                            param_value, self.options
-                        )
+                        param_value = f"\"{InstallSH.resolve_param_ref( param_value, self.options )}\""
+                    else:
+                        param_value = f"'{param_value}'"
+                elif isinstance(param_value, bool):
+                    param_value = f"'{str(param_value).lower()}'"
 
+                else:
+                    raise ValueError(f"param {param_value} is of bad type: {str(type(param_value))} (only string or boolean allowed)")
+                
                 resolved_params[param_name] = param_value
+
+            
             installation_lines.append(
                 self.create_install_command(feature_dependency.feature, resolved_params)
             )
@@ -93,11 +100,12 @@ class InstallSH(File):
         return param_value.startswith(cls.REF_PREFIX)
 
     def create_install_command(
-        self, feature_oci: str, params: Dict[str, Union[str, bool]]
+        self, feature_oci: str, params: Dict[str, str]
     ) -> str:
+     
         stringified_envs_args = " ".join(
             [
-                f'--option {env}="{InstallSH._escape_qoutes(str(val))}"'
+                f'--option {env}={val}'
                 for env, val in params.items()
             ]
         )
