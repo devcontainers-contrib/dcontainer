@@ -1,6 +1,6 @@
 {
     "id": "upx",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "UPX (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/upx",
     "description": "UPX is a free, secure, portable, extendable, high-performance executable packer for several executable formats.",
@@ -19,10 +19,10 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.4",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.8",
             "options": {
                 "repo": "upx/upx",
-                "target": "upx",
+                "binaryName": "upx",
                 "version": "$options.version"
             }
         }

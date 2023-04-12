@@ -41,7 +41,6 @@
                 "binaryName": "run.sh",
                 "binLocation": "$_REMOTE_USER_HOME/.local/bin",
                 "version": "$options.version",
-
                 "libLocation": "$_REMOTE_USER_HOME",
                 "libName": "actions-runner",
                 "assetRegex": "^(?!.*(noruntime))(?!.*(trimmedpackages))(.*-noexternals.*)"

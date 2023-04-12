@@ -1,6 +1,6 @@
 {
     "id": "age-keygen",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "age-keygen (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/age-keygen",
     "description": "age-keygen generate a key pair for use with age.",
@@ -19,10 +19,10 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.4",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.8",
             "options": {
                 "repo": "filosottile/age",
-                "target": "age-keygen",
+                "binaryName": "age-keygen",
                 "version": "$options.version"
             }
         }

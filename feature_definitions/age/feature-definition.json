@@ -1,6 +1,6 @@
 {
     "id": "age",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "mkcert (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/age",
     "description": "age is a simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.",
@@ -19,10 +19,10 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.4",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.8",
             "options": {
                 "repo": "filosottile/age",
-                "target": "age",
+                "binaryName": "age",
                 "version": "$options.version"
             }
         }
