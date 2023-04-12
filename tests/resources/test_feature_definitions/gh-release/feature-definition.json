@@ -1,6 +1,6 @@
 {
     "id": "gh-release",
-    "version": "1.0.5",
+    "version": "1.0.8",
     "name": "Github Release",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gh-release",
     "description": "Github Release feature will download, extract and add to path a release binary from a given repo",
@@ -15,7 +15,7 @@
             ],
             "type": "string"
         },
-        "target": {
+        "binaryName": {
             "default": "",
             "description": "The target binary name. For example, for Github CLI the binary name would be 'gh'. For DigitalOcean CLI: 'doctl', etc.",
             "proposals": [
@@ -42,10 +42,15 @@
         },
         "libLocation": {
             "default": "/usr/local/lib",
-            "description": "Location to download the any lib files into (if exists) to.",
+            "description": "Any lib files (if exists) will be downloaded into this location. The binary will then be soft linked from the lib location to the bin location",
             "proposals": [
                 "/usr/local/lib"
             ],
+            "type": "string"
+        },
+        "libName": {
+            "default": "",
+            "description": "Name for the lib dir (if exists). Will default to binary name if not given",
             "type": "string"
         },
         "assetRegex": {
@@ -56,7 +61,7 @@
     },
     "installsAfter": [],
     "dependencies": [],
-    "install_command": "asset_regex_cmd=$(if ! [[ -z $ASSETREGEX ]]; then echo --asset-regex \"${ASSETREGEX}\" ; fi)\n$nanolayer_location \\\n   install gh-release \\\n   \"$REPO\" \\\n   \"$TARGET\" \\\n   --version \"$VERSION\" --bin-location \"$BINLOCATION\"  --lib-location \"$LIBLOCATION\"  $asset_regex_cmd --force",
+    "install_command": "asset_regex_cmd=$(if ! [[ -z $ASSETREGEX ]]; then echo --asset-regex \"${ASSETREGEX}\" ; fi)\nlib_name_cmd=$(if ! [[ -z $LIBNAME ]]; then echo --lib-name \"${LIBNAME}\" ; fi)\n$nanolayer_location \\\n   install gh-release \\\n   \"$REPO\" \\\n   \"$BINARYNAME\" --force \\\n   --version \"$VERSION\" --bin-location \"$BINLOCATION\"  --lib-location \"$LIBLOCATION\"  $asset_regex_cmd $lib_name_cmd ",
     "test_scenarios": [
         {
             "name": "test_defaults_debian",
@@ -67,7 +72,7 @@
             "options": {
                 "version": "latest",
                 "repo": "cli/cli",
-                "target": "gh"
+                "binaryName": "gh"
             }
         },
         {
@@ -79,7 +84,7 @@
             "options": {
                 "version": "latest",
                 "repo": "cli/cli",
-                "target": "gh"
+                "binaryName": "gh"
             }
         },
         {
@@ -91,7 +96,7 @@
             "options": {
                 "version": "latest",
                 "repo": "nektos/act",
-                "target": "act"
+                "binaryName": "act"
             }
         },
         {
@@ -103,7 +108,7 @@
             "options": {
                 "version": "latest",
                 "repo": "PowerShell/PowerShell",
-                "target": "pwsh",
+                "binaryName": "pwsh",
                 "assetRegex": "^(?!.*(fxdependent))"
             }
         }
