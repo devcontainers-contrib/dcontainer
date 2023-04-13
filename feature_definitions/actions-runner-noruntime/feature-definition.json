@@ -59,7 +59,7 @@
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "$_REMOTE_USER_HOME/actions-runner/run.sh --version"
+                "$HOME/actions-runner/run.sh --version"
             ],
             "options": {}
         }

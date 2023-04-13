@@ -1,6 +1,6 @@
 {
     "id": "actions-runner",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "GitHub Actions Runner",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/actions-runner",
     "description": "The runner is the application that runs a job from a GitHub Actions workflow. It is used by GitHub Actions in the hosted virtual environments, or you can self-host the runner in your own environment.",
@@ -35,13 +35,12 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.8",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
             "options": {
                 "repo": "actions/runner",
-                "binaryName": "run.sh",
+                "binaryNames": "run.sh",
                 "binLocation": "$_REMOTE_USER_HOME/.local/bin",
                 "version": "$options.version",
-
                 "libLocation": "$_REMOTE_USER_HOME",
                 "libName": "actions-runner",
                 "assetRegex": "^(?!.*(noruntime))(?!.*(trimmedpackages))(?!.*(noexternals))"
@@ -50,17 +49,17 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
-                "command": "rm /home/vscode/.local/bin/run.sh && \\\n   chown -hR ${_REMOTE_USER}:${_REMOTE_USER} $_REMOTE_USER_HOME/actions-runner && \\\n   ln -s $_REMOTE_USER_HOME/actions-runner/runsvc.sh $_REMOTE_USER_HOME/.local/bin/runsvc.sh && \\\n   ln -s $_REMOTE_USER_HOME/actions-runner/run.sh $_REMOTE_USER_HOME/.local/bin/run.sh"
+                "command": "rm /home/vscode/.local/bin/run.sh && \\\n   chown -hR ${_REMOTE_USER}:${_REMOTE_USER} $_REMOTE_USER_HOME/actions-runner"
             }
         }
     ],
-    "install_command": "echo GitHub Actions Runner now installed at $_REMOTE_USER_HOME/actions-runner",
+    "install_command": "echo \"GitHub Actions Runner now installed at $_REMOTE_USER_HOME/actions-runner\"",
     "test_scenarios": [
         {
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "run.sh --version"
+                "$HOME/actions-runner/run.sh --version"
             ],
             "options": {}
         }

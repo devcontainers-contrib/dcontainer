@@ -53,7 +53,7 @@ def test_feature_dir_generation(
 @pytest.mark.parametrize(
     "feature_id,feature_definition_dir,nanolayer_version",
     [
-        (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.16")
+        (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.17")
         for v in os.listdir(FEATURE_DEFINITION_DIR)
     ],
 )
