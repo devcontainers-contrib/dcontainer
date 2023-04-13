@@ -49,17 +49,17 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
-                "command": "rm /home/vscode/.local/bin/run.sh && \\\n   chown -hR ${_REMOTE_USER}:${_REMOTE_USER} $_REMOTE_USER_HOME/actions-runner && \\\n   ln -s $_REMOTE_USER_HOME/actions-runner/runsvc.sh $_REMOTE_USER_HOME/.local/bin/runsvc.sh && \\\n   ln -s $_REMOTE_USER_HOME/actions-runner/run.sh $_REMOTE_USER_HOME/.local/bin/run.sh"
+                "command": "rm /home/vscode/.local/bin/run.sh && \\\n   chown -hR ${_REMOTE_USER}:${_REMOTE_USER} $_REMOTE_USER_HOME/actions-runner"
             }
         }
     ],
-    "install_command": "echo GitHub Actions Runner now installed at $_REMOTE_USER_HOME/actions-runner",
+    "install_command": "echo \"GitHub Actions Runner now installed at $_REMOTE_USER_HOME/actions-runner\"",
     "test_scenarios": [
         {
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "run.sh --version"
+                "$_REMOTE_USER_HOME/actions-runner/run.sh --version"
             ],
             "options": {}
         }
