@@ -73,7 +73,7 @@
             "options": {
                 "version": "latest",
                 "repo": "cli/cli",
-                "binaryName": "gh"
+                "binaryNames": "gh"
             }
         },
         {
@@ -85,7 +85,7 @@
             "options": {
                 "version": "latest",
                 "repo": "cli/cli",
-                "binaryName": "gh"
+                "binaryNames": "gh"
             }
         },
         {
@@ -97,7 +97,19 @@
             "options": {
                 "version": "latest",
                 "repo": "nektos/act",
-                "binaryName": "act"
+                "binaryNames": "act"
+            }
+        },
+        {
+            "name": "test_etcd",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "etcd --version"
+            ],
+            "options": {
+                "version": "latest",
+                "repo": "etcd-io/etcd",
+                "binaryNames": "etcd,etcdctl"
             }
         },
         {
@@ -109,7 +121,7 @@
             "options": {
                 "version": "latest",
                 "repo": "PowerShell/PowerShell",
-                "binaryName": "pwsh",
+                "binaryNames": "pwsh",
                 "assetRegex": "^(?!.*(fxdependent))"
             }
         }
