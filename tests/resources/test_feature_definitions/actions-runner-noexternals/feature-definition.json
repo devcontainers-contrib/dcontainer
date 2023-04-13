@@ -1,5 +1,5 @@
 {
-    "id": "actions-runner",
+    "id": "actions-runner-noexternals",
     "version": "1.0.1",
     "name": "GitHub Actions Runner (No Externals)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/actions-runner-noexternals",
