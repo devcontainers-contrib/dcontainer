@@ -35,10 +35,10 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.8",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
             "options": {
                 "repo": "actions/runner",
-                "binaryName": "run.sh",
+                "binaryNames": "run.sh",
                 "binLocation": "$_REMOTE_USER_HOME/.local/bin",
                 "version": "$options.version",
                 "libLocation": "$_REMOTE_USER_HOME",
