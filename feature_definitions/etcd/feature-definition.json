@@ -23,7 +23,8 @@
             "options": {
                 "repo": "etcd-io/etcd",
                 "binaryNames": "etcd,etcdctl",
-                "version": "$options.version"
+                "version": "$options.version",
+                "libName": "etcd"
             }
         }
     ],
