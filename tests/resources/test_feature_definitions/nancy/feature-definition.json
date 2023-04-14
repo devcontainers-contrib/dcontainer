@@ -1,0 +1,42 @@
+{
+    "id": "nancy",
+    "version": "1.0.0",
+    "name": "Nancy (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/nancy",
+    "description": "Nancy is a tool to check for vulnerabilities in your Golang dependencies, powered by Sonatype OSS Index.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
+            "options": {
+                "repo": "sonatype-nexus-community/nancy",
+                "binaryNames": "nancy",
+                "version": "$options.version",
+                "assetRegex": ".*(.tar.gz)$"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "nancy --version"
+            ],
+            "options": {}
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": "immuadmin",
+    "version": "1.0.0",
+    "name": "immuadmin (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/immuadmin",
+    "description": "immuadmin is the admin CLI for immudb and immugw. You can install and manage the service installation for both components and get statistics as well as runtime information.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
+            "options": {
+                "repo": "codenotary/immudb",
+                "binaryNames": "immuadmin",
+                "version": "$options.version",
+                "assetRegex": ".*(fips).*"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "immuadmin version"
+            ],
+            "options": {}
+        }
+    ]
+}

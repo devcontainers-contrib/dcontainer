@@ -1,0 +1,41 @@
+{
+    "id": "bomber",
+    "version": "1.0.0",
+    "name": "bomber (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/bomber",
+    "description": "bomber is an application that scans SBOMs for security vulnerabilities.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
+            "options": {
+                "repo": "devops-kung-fu/bomber",
+                "binaryNames": "bomber",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "bomber --version"
+            ],
+            "options": {}
+        }
+    ]
+}

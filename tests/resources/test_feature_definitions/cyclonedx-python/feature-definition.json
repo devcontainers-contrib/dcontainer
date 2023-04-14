@@ -1,9 +1,9 @@
 {
-    "name": "Ansible (via pipx)",
-    "id": "ansible",
-    "version": "1.2.1",
-    "description": "Ansible is a suite of software tools that enables infrastructure as code.",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ansible",
+    "name": "CycloneDX Python (via pipx)",
+    "id": "cyclonedx-python",
+    "version": "1.0.0",
+    "description": "CycloneDX Python creates CycloneDX Software Bill of Materials (SBOM) from Python projects and environments.",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/cyclonedx-python",
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
         "ghcr.io/devcontainers/features/python"
@@ -15,16 +15,15 @@
                 "latest"
             ],
             "default": "latest",
-            "description": "Select the version of Ansible to install."
+            "description": "Select the version to install."
         }
     },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",
             "options": {
-                "package": "ansible-core",
-                "version": "$options.version",
-                "injections": "ansible"
+                "package": "cyclonedx-bom",
+                "version": "$options.version"
             }
         }
     ],
@@ -34,7 +33,7 @@
             "name": "test_defaults",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "ansible --version"
+                "cyclonedx-py --help"
             ],
             "options": {}
         }

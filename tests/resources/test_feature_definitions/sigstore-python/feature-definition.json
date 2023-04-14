@@ -1,8 +1,8 @@
 {
-    "name": "Ansible (via pipx)",
-    "id": "ansible",
-    "version": "1.2.1",
-    "description": "Ansible is a suite of software tools that enables infrastructure as code.",
+    "name": "sigstore-python (via pipx)",
+    "id": "sigstore-python",
+    "version": "1.0.0",
+    "description": "sigstore-python is a Python tool for generating and verifying Sigstore signatures. You can use it to sign and verify Python package distributions, or anything else!",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ansible",
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
@@ -15,16 +15,15 @@
                 "latest"
             ],
             "default": "latest",
-            "description": "Select the version of Ansible to install."
+            "description": "Select the version to install."
         }
     },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",
             "options": {
-                "package": "ansible-core",
-                "version": "$options.version",
-                "injections": "ansible"
+                "package": "sigstore",
+                "version": "$options.version"
             }
         }
     ],
@@ -34,7 +33,7 @@
             "name": "test_defaults",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "ansible --version"
+                "sigstore --version"
             ],
             "options": {}
         }

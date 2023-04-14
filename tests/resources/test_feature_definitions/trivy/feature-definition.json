@@ -1,9 +1,9 @@
 {
-    "name": "Ansible (via pipx)",
-    "id": "ansible",
-    "version": "1.2.1",
-    "description": "Ansible is a suite of software tools that enables infrastructure as code.",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ansible",
+    "name": "Scan (SAST) (via pipx)",
+    "id": "scancode-toolkit",
+    "version": "1.0.0",
+    "description": "ScanCode scan code to detect packages and dependencies, licenses, copyrights and more.",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/scancode-toolkit",
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
         "ghcr.io/devcontainers/features/python"
@@ -15,16 +15,15 @@
                 "latest"
             ],
             "default": "latest",
-            "description": "Select the version of Ansible to install."
+            "description": "Select the version to install."
         }
     },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",
             "options": {
-                "package": "ansible-core",
-                "version": "$options.version",
-                "injections": "ansible"
+                "package": "scancode-toolkit",
+                "version": "$options.version"
             }
         }
     ],
@@ -34,7 +33,7 @@
             "name": "test_defaults",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "ansible --version"
+                "scancode --version"
             ],
             "options": {}
         }
