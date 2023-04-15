@@ -1,6 +1,6 @@
 {
     "id": "apt-packages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "apt packages (for Debian/Ubuntu)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/apt-packages",
     "description": "Advanced package tool, or APT, is a free-software user interface that works with core libraries to handle the installation and removal of software on Debian and Debian-based Linux distributions.",
@@ -24,27 +24,18 @@
             "type": "string"
         },
         "clean_ppas": {
-            "default": "true",
+            "default": true,
             "description": "If ppas used, remove them after usage in order to increase safety",
-            "proposals": [
-                "latest"
-            ],
             "type": "boolean"
         },
         "preserve_apt_list": {
-            "default": "true",
+            "default": true,
             "description": "Preserving the existing apt list (the result of apt-get update) will decrease container layer size (but will require a re-update of the packages database on next install)",
-            "proposals": [
-                "latest"
-            ],
             "type": "boolean"
         },
         "force_ppas_on_non_ubuntu": {
-            "default": "false",
+            "default": false,
             "description": "Installing ppas on a non-ubuntu distro (eg. debian) is discouraged",
-            "proposals": [
-                "latest"
-            ],
             "type": "boolean"
         }
     },
@@ -63,6 +54,5 @@
                 "ppas": "ppa:neovim-ppa/stable"
             }
         }
-        
     ]
 }
