@@ -1,6 +1,6 @@
 {
     "id": "chezscheme-asdf",
-    "version": "2.0.11",
+    "version": "2.0.12",
     "name": "chezscheme (via asdf)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/chezscheme-asdf",
     "description": "Chez Scheme is both a programming language and an implementation of that language, with supporting tools and documentation.",
@@ -20,9 +20,9 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.0",
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.3",
             "options": {
-                "packages": "build-essential uuid-dev libncurses5-dev libx11-dev"
+                "packages": "build-essential,uuid-dev,libncurses5-dev,libx11-dev"
             }
         },
         {
