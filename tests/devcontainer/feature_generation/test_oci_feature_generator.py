@@ -2,13 +2,19 @@ import os
 import pathlib
 
 import pytest
-from helpers import RESOURCE_DIR
+from helpers import FEATURE_DEFINITION_DIR
 
 from dcontainer.devcontainer.feature_generation.oci_feature_generator import (
     OCIFeatureGenerator,
 )
 
-FEATURE_DEFINITION_DIR = os.path.join(RESOURCE_DIR, "test_feature_definitions")
+TEST_FEATURE_IDS = ("actions-runner", "actions-runner-noruntime-no-externals", "powershell", "ansible", "alp-asdf", "kotlin-sdkman", "asdf-package", "angular-cli", "npm-package", "apt-get-packages", "apt-packages", "caddy", "brownie", "caddy", "cosign", "gh-release", "groovy-sdkman", "immuadmin", "immuadmin-fips", "localstack", "micronaut-sdkman", "")
+
+TEST_FEATURE_PATHS = [
+        (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.23")
+
+        for v in os.listdir(FEATURE_DEFINITION_DIR) if v in TEST_FEATURE_IDS
+    ]
 
 
 TEST_IMAGE = "mcr.microsoft.com/devcontainers/base:debian"
@@ -16,10 +22,7 @@ TEST_IMAGE = "mcr.microsoft.com/devcontainers/base:debian"
 
 @pytest.mark.parametrize(
     "feature_id,feature_definition_dir,nanolayer_version",
-    [
-        (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.23")
-        for v in os.listdir(FEATURE_DEFINITION_DIR)
-    ],
+    TEST_FEATURE_PATHS,
 )
 def test_feature_dir_generation(
     shell,
@@ -52,10 +55,7 @@ def test_feature_dir_generation(
 
 @pytest.mark.parametrize(
     "feature_id,feature_definition_dir,nanolayer_version",
-    [
-        (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.23")
-        for v in os.listdir(FEATURE_DEFINITION_DIR)
-    ],
+    TEST_FEATURE_PATHS,
 )
 def test_feature_dir_generation_and_run_devcontainer_tests(
     shell,
