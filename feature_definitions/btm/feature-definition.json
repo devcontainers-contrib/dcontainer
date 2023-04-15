@@ -1,6 +1,6 @@
 {
     "id": "btm",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "name": "bottom (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/btm",
     "description": "bottom is a customizable cross-platform graphical process/system monitor for the terminal.",
@@ -23,7 +23,8 @@
             "options": {
                 "repo": "ClementTsang/bottom",
                 "binaryNames": "btm",
-                "version": "$options.version"
+                "version": "$options.version",
+                "assetRegex": "^(?!.*(2-17))"
             }
         }
     ],
