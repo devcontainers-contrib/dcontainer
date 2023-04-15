@@ -1,39 +1,39 @@
 {
-    "name": "Scan (SAST) (via pipx)",
-    "id": "scancode-toolkit",
+    "id": "trivy",
     "version": "1.0.0",
-    "description": "ScanCode scan code to detect packages and dependencies, licenses, copyrights and more.",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/scancode-toolkit",
-    "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/pipx-package",
-        "ghcr.io/devcontainers/features/python"
-    ],
+    "name": "Trivy (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/trivy",
+    "description": "Trivy is a comprehensive and versatile security scanner. It finds vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.",
     "options": {
         "version": {
-            "type": "string",
+            "default": "latest",
+            "description": "Select the version to install.",
             "proposals": [
                 "latest"
             ],
-            "default": "latest",
-            "description": "Select the version to install."
+            "type": "string"
         }
     },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
             "options": {
-                "package": "scancode-toolkit",
+                "repo": "aquasecurity/trivy",
+                "binaryNames": "trivy",
                 "version": "$options.version"
             }
         }
     ],
-    "install_command": "echo 'Done'",
+    "install_command": "echo 'Done!'",
     "test_scenarios": [
         {
-            "name": "test_defaults",
+            "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "scancode --version"
+                "trivy --version"
             ],
             "options": {}
         }

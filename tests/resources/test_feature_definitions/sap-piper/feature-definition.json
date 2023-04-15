@@ -1,9 +1,9 @@
 {
-    "id": "trivy",
+    "id": "sap-piper",
     "version": "1.0.0",
-    "name": "Trivy (via Github Releases)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/trivy",
-    "description": "Trivy is a comprehensive and versatile security scanner. It finds vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.",
+    "name": "Project Piper (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/sap-piper",
+    "description": "Piper offers default pipelines to easily implement CI/CD processes integrating SAP systems.",
     "options": {
         "version": {
             "default": "latest",
@@ -21,9 +21,10 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
             "options": {
-                "repo": "aquasecurity/trivy",
-                "binaryNames": "trivy",
-                "version": "$options.version"
+                "repo": "SAP/jenkins-library",
+                "binaryNames": "piper",
+                "version": "$options.version",
+                "assetRegex": "^(?!.*(master))"
             }
         }
     ],
@@ -33,7 +34,7 @@
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "trivy --version"
+                "piper version"
             ],
             "options": {}
         }

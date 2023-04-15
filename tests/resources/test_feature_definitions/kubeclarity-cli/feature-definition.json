@@ -23,7 +23,7 @@
             "options": {
                 "repo": "openclarity/kubeclarity",
                 "binaryNames": "kubeclarity-cli",
-                "version": "$options.version",
+                "version": "$options.version"
                 
             }
         }

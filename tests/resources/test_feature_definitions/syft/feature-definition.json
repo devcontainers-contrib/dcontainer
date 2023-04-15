@@ -1,9 +1,9 @@
 {
-    "id": "ko",
+    "id": "syft",
     "version": "1.0.0",
-    "name": "ko (via Github Releases)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ko",
-    "description": "ko is a simple, fast container image builder for Go applications.",
+    "name": "Syft (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/syft",
+    "description": "Syft is A CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems.",
     "options": {
         "version": {
             "default": "latest",
@@ -21,8 +21,8 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.9",
             "options": {
-                "repo": "sonatype-nexus-community/nancy",
-                "binaryNames": "nancy",
+                "repo": "anchore/syft",
+                "binaryNames": "syft",
                 "version": "$options.version"
             }
         }
@@ -33,7 +33,7 @@
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "ko version"
+                "syft version"
             ],
             "options": {}
         }
