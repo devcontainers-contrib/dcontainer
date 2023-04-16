@@ -8,7 +8,8 @@ from dcontainer.devcontainer.feature_generation.oci_feature_generator import (
     OCIFeatureGenerator,
 )
 
-TEST_FEATURE_IDS = ("actions-runner", "actions-runner-noruntime-no-externals", "powershell", "ansible", "alp-asdf", "kotlin-sdkman", "asdf-package", "angular-cli", "npm-package", "apt-get-packages", "apt-packages", "caddy", "brownie", "caddy", "cosign", "gh-release", "groovy-sdkman", "immuadmin", "immuadmin-fips", "localstack", "micronaut-sdkman", "")
+TEST_FEATURE_IDS = ("actions-runner", "actions-runner-noruntime-no-externals", "powershell", "ansible", "alp-asdf", "kotlin-sdkman", "asdf-package", "angular-cli", "npm-package", "apt-get-packages", "apt-packages", "caddy", "brownie", "caddy", "cosign", "gh-release", "groovy-sdkman", "immuadmin", "immuadmin-fips", "localstack", "micronaut-sdkman")
+new_features = ("xonsh", "tea", "starship", "nushell", "navi", "mackup", "how2", "gitmux", "fish-apt-get", "dnote", "buku", "bartib", "autoenv")
 
 TEST_FEATURE_PATHS = [
         (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.23")

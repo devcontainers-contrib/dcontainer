@@ -1,0 +1,40 @@
+{
+    "id": "autoenv",
+    "version": "1.0.0",
+    "name": "Autoenv (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/autoenv",
+    "description": "Autoenv is a tool which automatically reads and setups configuration from a . env file when you cd to a directory.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version of Angular CLI to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "@hyperupcall/autoenv",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "ng --help"
+            ],
+            "options": {}
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "id": "fish-apt-get",
+    "version": "1.0.0",
+    "name": "fish (via apt-get)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/fish-apt-get",
+    "description": "fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family. fish includes features like syntax highlighting, autosuggest-as-you-type, and fancy tab completions that just work, with no configuration required.",
+    "options": {},
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/apt-get-packages"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.3",
+            "options": {
+                "packages": "fish"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "fish -version"
+            ],
+            "options": {}
+        }
+    ]
+}

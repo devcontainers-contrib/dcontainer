@@ -1,0 +1,41 @@
+{
+    "id": "tea",
+    "version": "1.0.0",
+    "name": "tea (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tea",
+    "description": "tea is the next-generation, cross-platform package manager from the creator of brew.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.11",
+            "options": {
+                "repo": "teaxyz/cli",
+                "binaryNames": "tea",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "tea --version"
+            ],
+            "options": {}
+        }
+    ]
+}
