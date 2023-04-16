@@ -1,0 +1,40 @@
+{
+    "id": "lastpass-cli-homebrew",
+    "version": "1.0.0",
+    "name": "LastPass CLI (via Homebrew)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/lastpass-cli-homebrew",
+    "description": "The LastPass command line application is an open source project that allows you to create, edit, and retrieve passwords in your online LastPass vault.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version of btop to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/homebrew-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.4",
+            "options": {
+                "package": "lastpass-cli",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "type lpass"
+            ],
+            "options": {}
+        }
+    ]
+}
