@@ -31,7 +31,15 @@
     "install_command": "echo 'Done!'",
     "test_scenarios": [
         {
-            "name": "test",
+            "name": "test_ubuntu",
+            "image": "ubuntu:22.04",
+            "test_commands": [
+                "ansible --version"
+            ],
+            "options": {}
+        },
+        {
+            "name": "test_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
                 "ansible --version"
