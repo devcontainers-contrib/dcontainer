@@ -1,23 +1,23 @@
 {
-    "name": "sigstore-python (via pipx)",
     "id": "sigstore-python",
-    "version": "1.0.0",
-    "description": "sigstore-python is a Python tool for generating and verifying Sigstore signatures. You can use it to sign and verify Python package distributions, or anything else!",
+    "version": "1.0.1",
+    "name": "sigstore-python (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ansible",
+    "description": "sigstore-python is a Python tool for generating and verifying Sigstore signatures. You can use it to sign and verify Python package distributions, or anything else!",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
         "ghcr.io/devcontainers/features/python"
     ],
-    "options": {
-        "version": {
-            "type": "string",
-            "proposals": [
-                "latest"
-            ],
-            "default": "latest",
-            "description": "Select the version to install."
-        }
-    },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",

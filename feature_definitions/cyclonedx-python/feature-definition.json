@@ -1,23 +1,23 @@
 {
-    "name": "CycloneDX Python (via pipx)",
     "id": "cyclonedx-python",
-    "version": "1.0.0",
-    "description": "CycloneDX Python creates CycloneDX Software Bill of Materials (SBOM) from Python projects and environments.",
+    "version": "1.0.1",
+    "name": "CycloneDX Python (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/cyclonedx-python",
+    "description": "CycloneDX Python creates CycloneDX Software Bill of Materials (SBOM) from Python projects and environments.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
         "ghcr.io/devcontainers/features/python"
     ],
-    "options": {
-        "version": {
-            "type": "string",
-            "proposals": [
-                "latest"
-            ],
-            "default": "latest",
-            "description": "Select the version to install."
-        }
-    },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",

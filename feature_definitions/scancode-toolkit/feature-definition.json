@@ -1,23 +1,23 @@
 {
-    "name": "Scan (SAST) (via pipx)",
     "id": "scancode-toolkit",
-    "version": "1.0.0",
-    "description": "ScanCode scan code to detect packages and dependencies, licenses, copyrights and more.",
+    "version": "1.0.1",
+    "name": "Scan (SAST) (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/scancode-toolkit",
+    "description": "ScanCode scan code to detect packages and dependencies, licenses, copyrights and more.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/pipx-package",
         "ghcr.io/devcontainers/features/python"
     ],
-    "options": {
-        "version": {
-            "type": "string",
-            "proposals": [
-                "latest"
-            ],
-            "default": "latest",
-            "description": "Select the version to install."
-        }
-    },
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:latest",
