@@ -1,0 +1,40 @@
+{
+    "id": "trello-cli",
+    "version": "1.0.0",
+    "name": "Trello CLI (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/trello-cli",
+    "description": "trello-cli is a CLI tool for Trello. Makes sense, right?",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version of Jest to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "trello-cli",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "type trello"
+            ],
+            "options": {}
+        }
+    ]
+}

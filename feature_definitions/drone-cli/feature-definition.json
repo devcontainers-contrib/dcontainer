@@ -1,0 +1,41 @@
+{
+    "id": "drone-cli",
+    "version": "1.0.0",
+    "name": "Drone CLI (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/drone-cli",
+    "description": "Drone CLI is a command line client for the Drone continuous integration server.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.13",
+            "options": {
+                "repo": "harness/drone-cli",
+                "binaryNames": "drone",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "drone --version"
+            ],
+            "options": {}
+        }
+    ]
+}
