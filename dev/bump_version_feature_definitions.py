@@ -1,14 +1,14 @@
 import os
+from enum import Enum
 from pathlib import Path
 from typing import Optional
 
-import typer
 import semver
+import typer
 
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDefinition,
 )
-from enum import Enum
 
 
 class VersionType(Enum):
@@ -22,11 +22,14 @@ def is_dependent_of(feature_name: str, feature_definition: FeatureDefinition) ->
         for dep in feature_definition.dependencies:
             if feature_name in dep.feature:
                 return True
-    
+
     return False
 
+
 def bump_version_feature_definitions(
-    feature_definitions_dir: str, version_type: VersionType, depends_on: Optional[str] = None
+    feature_definitions_dir: str,
+    version_type: VersionType,
+    depends_on: Optional[str] = None,
 ) -> None:
     for feature_name in os.listdir(feature_definitions_dir):
         feature_definition_file = os.path.join(
@@ -35,7 +38,9 @@ def bump_version_feature_definitions(
 
         feature_definition = FeatureDefinition.parse_file(feature_definition_file)
 
-        if depends_on is not None and not is_dependent_of(depends_on, feature_definition):
+        if depends_on is not None and not is_dependent_of(
+            depends_on, feature_definition
+        ):
             continue
 
         semver_version = semver.VersionInfo.parse(feature_definition.version)

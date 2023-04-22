@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+
 from dcontainer.devcontainer.models.devcontainer_feature import FeatureOptionItem2
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDefinition,
@@ -6,8 +8,6 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependency,
     TestScenario,
 )
-
-import os
 
 
 def generate_apt_get_definitions(partial_feature_json: str, output_dir: str) -> None:
@@ -30,25 +30,26 @@ def generate_apt_get_definitions(partial_feature_json: str, output_dir: str) -> 
             description=partial_feature["description"],
             documentationURL=f"http://github.com/devcontainers-contrib/features/tree/main/src/{partial_feature['id']}",
             installsAfter=["ghcr.io/devcontainers-contrib/features/apt-get-packages"],
-            dependencies=
-                FeatureDependencies(__root__=[
-                    FeatureDependency(feature="ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.2",
-                    options={
-                        "packages": partial_feature["package"],
-                    },
-                )])
-            ,
+            dependencies=FeatureDependencies(
+                __root__=[
+                    FeatureDependency(
+                        feature="ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.2",
+                        options={
+                            "packages": partial_feature["package"],
+                        },
+                    )
+                ]
+            ),
             install_command="echo 'Done!'",
             test_scenarios=[
                 TestScenario(
                     name="test_defaults_debian",
                     image="mcr.microsoft.com/devcontainers/base:debian",
                     test_commands=[partial_feature["test_command"]],
-                    options={}
+                    options={},
                 )
             ],
-            options={
-            },
+            options={},
         )
 
         with open(feature_definition_file, "w+") as f:

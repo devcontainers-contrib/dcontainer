@@ -4,7 +4,6 @@ from easyfs import File
 
 from dcontainer.utils.settings import ENV_CLI_LOCATION, ENV_FORCE_CLI_INSTALLATION
 
-
 HEADER = """#!/bin/bash -i
 
 

@@ -1,8 +1,8 @@
+import importlib
 import json
 import urllib
 import urllib.request
 from importlib.metadata import version
-import importlib
 from typing import List
 
 OWN_REPO = "devcontainers-contrib/dcontainer"

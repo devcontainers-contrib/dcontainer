@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+
 from dcontainer.devcontainer.models.devcontainer_feature import FeatureOptionItem2
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDefinition,
@@ -6,8 +8,6 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependency,
     TestScenario,
 )
-
-import os
 
 
 def generate_gh_feature_definitions(partial_feature_json: str, output_dir: str) -> None:
@@ -30,23 +30,25 @@ def generate_gh_feature_definitions(partial_feature_json: str, output_dir: str) 
             description=partial_feature["description"],
             documentationURL=f"http://github.com/devcontainers-contrib/features/tree/main/src/{partial_feature['id']}",
             installsAfter=["ghcr.io/devcontainers-contrib/features/gh-release"],
-            dependencies=
-                FeatureDependencies(__root__=[
-                    FeatureDependency(feature="ghcr.io/devcontainers-contrib/features/gh-release:1.0.1",
-                    options={
-                        "repo": partial_feature["repo"],
-                        "target": partial_feature["target"],
-                        "version": "$options.version",
-                    },
-                )])
-            ,
+            dependencies=FeatureDependencies(
+                __root__=[
+                    FeatureDependency(
+                        feature="ghcr.io/devcontainers-contrib/features/gh-release:1.0.1",
+                        options={
+                            "repo": partial_feature["repo"],
+                            "target": partial_feature["target"],
+                            "version": "$options.version",
+                        },
+                    )
+                ]
+            ),
             install_command="echo 'Done!'",
             test_scenarios=[
                 TestScenario(
                     name="test_defaults_debian",
                     image="mcr.microsoft.com/devcontainers/base:debian",
                     test_commands=[partial_feature["test_command"]],
-                    options={}
+                    options={},
                 )
             ],
             options={
