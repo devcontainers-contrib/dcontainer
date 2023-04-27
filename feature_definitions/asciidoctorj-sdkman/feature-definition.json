@@ -7,7 +7,7 @@
     "options": {
         "version": {
             "default": "latest",
-            "description": "Select the version of AsciidoctorJ to install.",
+            "description": "Select the version to install.",
             "proposals": [
                 "latest"
             ],

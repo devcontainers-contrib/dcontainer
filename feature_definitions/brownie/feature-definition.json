@@ -7,7 +7,7 @@
     "options": {
         "version": {
             "default": "latest",
-            "description": "Select the version of Brownie to install.",
+            "description": "Select the version to install.",
             "proposals": [
                 "latest"
             ],
@@ -15,7 +15,7 @@
         },
         "pythonVersion": {
             "default": "os-provided",
-            "description": "Select the version of python to install.",
+            "description": "Select the version to install.",
             "proposals": [
                 "os-provided"
             ],

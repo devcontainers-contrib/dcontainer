@@ -7,7 +7,7 @@
     "options": {
         "version": {
             "default": "latest",
-            "description": "Select the version of Flit to install.",
+            "description": "Select the version to install.",
             "proposals": [
                 "latest"
             ],

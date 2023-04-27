@@ -15,7 +15,7 @@
         },
         "golangVersion": {
             "default": "latest",
-            "description": "Select the version of go to install.",
+            "description": "Select the version to install.",
             "proposals": [
                 "latest",
                 "none",

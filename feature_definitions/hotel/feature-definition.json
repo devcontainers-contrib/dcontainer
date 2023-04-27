@@ -1,0 +1,40 @@
+{
+    "id": "hotel",
+    "version": "1.0.0",
+    "name": "hotel (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/hotel",
+    "description": "hotel is a simple process manager for developers. Start apps from your browser and access them using local domains.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "hotel",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "hotel --version"
+            ],
+            "options": {}
+        }
+    ]
+}
