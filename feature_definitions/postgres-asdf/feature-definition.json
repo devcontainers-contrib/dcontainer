@@ -1,0 +1,46 @@
+{
+    "id": "postgres-asdf",
+    "version": "1.0.1",
+    "name": "PostgreSQL (via asdf)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/postgres-asdf",
+    "description": "PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/asdf-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.4",
+            "options": {
+                "packages": "build-essential,libssl-dev,libreadline-dev,zlib1g-dev,libcurl4-openssl-dev,uuid-dev,icu-devtools"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.5",
+            "options": {
+                "plugin": "postgres",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "postgres -V"
+            ],
+            "options": {}
+        }
+    ]
+}
