@@ -107,4 +107,6 @@ def execute_current_python_in_container(
 
 
 RESOURCE_DIR = os.path.join(os.path.dirname(__file__), "resources")
-FEATURE_DEFINITION_DIR = os.path.join(os.path.dirname(__file__), "..", "feature_definitions")
+FEATURE_DEFINITION_DIR = os.path.join(
+    os.path.dirname(__file__), "..", "feature_definitions"
+)
