@@ -1,0 +1,40 @@
+{
+    "id": "bigcommerce-stencil-cli",
+    "version": "1.0.0",
+    "name": "BigCommerce Stencil CLI (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/bigcommerce-stencil-cli",
+    "description": "Stencil CLI gives developers the power to locally edit and preview themes with no impact to a merchant’s live storefront, and it's built-in Browsersync(opens in a new tab) capabilities make simultaneous testing across desktop, mobile, and tablet devices a breeze. Once work is complete, developers can push themes to BigCommerce storefronts (and set them live) using Stencil CLI's simple, yet powerful commands.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "@bigcommerce/stencil-cli",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "stencil --version"
+            ],
+            "options": {}
+        }
+    ]
+}
