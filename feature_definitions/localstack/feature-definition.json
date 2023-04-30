@@ -37,7 +37,7 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
-                "command": "mkdir /var/lib/localstack && chown $_REMOTE_USER /var/lib/localstack && sudo chgrp $_REMOTE_USER /var/lib/localstack"
+                "command": "mkdir /var/lib/localstack && chown $_REMOTE_USER /var/lib/localstack && chgrp $_REMOTE_USER /var/lib/localstack"
             }
         }
     ],
