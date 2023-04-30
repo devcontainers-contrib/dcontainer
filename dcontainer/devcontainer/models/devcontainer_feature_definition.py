@@ -10,7 +10,7 @@ from dcontainer.devcontainer.models.devcontainer_feature import Feature
 
 class FeatureDependency(BaseModel):
     feature: str
-    options: Dict[str, Union[str, bool]]
+    options: Dict[str, Union[bool, str]]
 
 
 class TestScenario(BaseModel):
