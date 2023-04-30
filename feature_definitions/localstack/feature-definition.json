@@ -1,6 +1,6 @@
 {
     "id": "localstack",
-    "version": "2.0.17",
+    "version": "2.0.18",
     "name": "Localstack (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/localstack",
     "description": "Localstack is a fully functional local AWS cloud stack.",
@@ -23,14 +23,21 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.4",
             "options": {
-                "packages": "libsasl2-dev,g++"
+                "packages": "build-essential,libsasl2-dev,g++"
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.3",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.4",
             "options": {
-                "package": "localstack[full]",
-                "version": "$options.version"
+                "package": "localstack[runtime]",
+                "version": "$options.version",
+                "includeDeps": true
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "mkdir /var/lib/localstack && chown $_REMOTE_USER /var/lib/localstack && sudo chgrp $_REMOTE_USER /var/lib/localstack"
             }
         }
     ],
