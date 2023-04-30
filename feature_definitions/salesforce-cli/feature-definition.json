@@ -1,0 +1,40 @@
+{
+    "id": "salesforce-cli",
+    "version": "1.0.0",
+    "name": "Salesforce CLI (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/salesforce-cli",
+    "description": "The Salesforce CLI is a powerful command line interface that simplifies development and build automation when working with your Salesforce org.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "@salesforce/cli",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "sf --version"
+            ],
+            "options": {}
+        }
+    ]
+}
