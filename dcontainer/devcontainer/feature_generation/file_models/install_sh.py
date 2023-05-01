@@ -2,14 +2,13 @@ import logging
 from typing import Dict, Optional, Union
 
 from easyfs import File
+from nanolayer.installers.devcontainer_feature.oci_feature import OCIFeature
 
 from dcontainer.devcontainer.models.devcontainer_feature import FeatureOption
 from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependencies,
 )
 from dcontainer.utils.version import resolve_nanolayer_release_version
-from nanolayer.installers.devcontainer_feature.oci_feature import OCIFeature
-
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +52,6 @@ class InstallSH(File):
         nanolayer_version: Optional[str] = None,
         entrypoint: Optional[str] = None,
     ) -> None:
-        
         self.install_command = install_command
         self.dependencies = dependencies or []
         self.options = options

@@ -55,7 +55,6 @@ class FeatureDefinition(Feature):
 
     def to_feature_model(self) -> Feature:
         if self.dependencies is not None:
-
             for dependency in self.dependencies:
                 dependency_feature_obj: Feature = (
                     OCIFeature.get_devcontainer_feature_obj(dependency.feature)
@@ -81,8 +80,7 @@ class FeatureDefinition(Feature):
                     if self.entrypoint is None or self.entrypoint == "":
                         self.entrypoint = dependency_feature_obj.entrypoint
                     else:
+                        self.entrypoint += f" && {dependency_feature_obj.entrypoint}"
 
-                        self.entrypoint += f"&& {dependency_feature_obj.entrypoint}"
-                        
         with mock.patch.object(Feature.Config, "extra", Extra.ignore):
             return Feature.parse_raw(self.json())
