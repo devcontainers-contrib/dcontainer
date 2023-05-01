@@ -8,6 +8,8 @@ from dcontainer.devcontainer.models.devcontainer_feature_definition import (
     FeatureDependencies,
 )
 from dcontainer.utils.version import resolve_nanolayer_release_version
+from nanolayer.installers.devcontainer_feature.oci_feature import OCIFeature
+
 
 logger = logging.getLogger(__name__)
 
@@ -36,12 +38,12 @@ ensure_nanolayer nanolayer_location "{nanolayer_version}"
 {dependency_installation_lines}
 
 {install_command}
-
 """
 
 
 class InstallSH(File):
     REF_PREFIX = "$options."
+    ENTRYPOINTS_BASE_LOCATION = "/usr/local/share"
 
     def __init__(
         self,
@@ -49,7 +51,9 @@ class InstallSH(File):
         dependencies: Optional[FeatureDependencies],
         options: Optional[Dict[str, FeatureOption]],
         nanolayer_version: Optional[str] = None,
+        entrypoint: Optional[str] = None,
     ) -> None:
+        
         self.install_command = install_command
         self.dependencies = dependencies or []
         self.options = options
@@ -88,6 +92,7 @@ class InstallSH(File):
                 self.create_install_command(feature_dependency.feature, resolved_params)
             )
         dependency_installation_lines = "\n\n".join(installation_lines)
+
         return HEADER.format(
             dependency_installation_lines=dependency_installation_lines,
             install_command=self.install_command,

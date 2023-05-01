@@ -83,7 +83,7 @@ class Type(Enum):
 class Mount(BaseModel):
     class Config:
         extra = Extra.ignore
-
+        use_enum_values = True
     source: str = Field(..., description="Mount source.")
     target: str = Field(..., description="Mount target.")
     type: Type = Field(..., description="Type of mount. Can be 'bind' or 'volume'.")

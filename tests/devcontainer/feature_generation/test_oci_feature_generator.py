@@ -31,10 +31,10 @@ TEST_FEATURE_IDS = (
     "localstack",
     "micronaut-sdkman",
 )
-new_features = "pass-apt-get"
+TEST_FEATURE_IDS = ["localstack"]
 
 TEST_FEATURE_PATHS = [
-    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.26")
+    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.35")
     for v in os.listdir(FEATURE_DEFINITION_DIR)
     if v in TEST_FEATURE_IDS
 ]

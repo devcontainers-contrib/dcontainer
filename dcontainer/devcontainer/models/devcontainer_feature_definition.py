@@ -55,6 +55,7 @@ class FeatureDefinition(Feature):
 
     def to_feature_model(self) -> Feature:
         if self.dependencies is not None:
+
             for dependency in self.dependencies:
                 dependency_feature_obj: Feature = (
                     OCIFeature.get_devcontainer_feature_obj(dependency.feature)
@@ -68,6 +69,7 @@ class FeatureDefinition(Feature):
                 if dependency_feature_obj.mounts is not None:
                     if self.mounts is None:
                         self.mounts = []
+
                     stringified_mounts = [
                         mount.json(sort_keys=True) for mount in self.mounts
                     ]
@@ -75,5 +77,12 @@ class FeatureDefinition(Feature):
                         if mount_dict.json(sort_keys=True) not in stringified_mounts:
                             self.mounts.append(mount_dict)
 
+                if dependency_feature_obj.entrypoint is not None:
+                    if self.entrypoint is None or self.entrypoint == "":
+                        self.entrypoint = dependency_feature_obj.entrypoint
+                    else:
+
+                        self.entrypoint += f"&& {dependency_feature_obj.entrypoint}"
+                        
         with mock.patch.object(Feature.Config, "extra", Extra.ignore):
-            return Feature(**self.dict())
+            return Feature.parse_raw(self.json())
