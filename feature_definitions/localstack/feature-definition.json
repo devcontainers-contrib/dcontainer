@@ -1,6 +1,6 @@
 {
     "id": "localstack",
-    "version": "2.0.18",
+    "version": "2.0.19",
     "name": "Localstack (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/localstack",
     "description": "Localstack is a fully functional local AWS cloud stack.",
@@ -27,6 +27,19 @@
             }
         },
         {
+            "feature": "ghcr.io/devcontainers/features/docker-in-docker:2.1.0",
+            "options": {
+                "installDockerBuildx": false
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers/features/python:1.1.0",
+            "options": {
+                "installTools": false,
+                "version": "3.10"
+            }
+        },
+        {
             "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.4",
             "options": {
                 "package": "localstack[runtime]",
@@ -42,12 +55,20 @@
         }
     ],
     "install_command": "echo 'Done!'",
+    "privileged": true,
+    "mounts": [
+        {
+            "source": "dind-var-lib-docker-${devcontainerId}",
+            "target": "/var/lib/docker",
+            "type": "volume"
+        }
+    ],
     "test_scenarios": [
         {
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "localstack --version"
+                "localstack --version && localstack start -d && sleep 10 && localstack status docker && localstack status services && localstack stop"
             ],
             "options": {}
         }
