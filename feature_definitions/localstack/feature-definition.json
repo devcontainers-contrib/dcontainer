@@ -55,20 +55,12 @@
         }
     ],
     "install_command": "echo 'Done!'",
-    "privileged": true,
-    "mounts": [
-        {
-            "source": "dind-var-lib-docker-${devcontainerId}",
-            "target": "/var/lib/docker",
-            "type": "volume"
-        }
-    ],
     "test_scenarios": [
         {
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "localstack --version && localstack start -d && sleep 10 && localstack status docker && localstack status services && localstack stop"
+                "sleep 5 && docker ps && localstack --version && localstack start -d && sleep 10 && localstack status docker && localstack status services && localstack stop"
             ],
             "options": {}
         }
