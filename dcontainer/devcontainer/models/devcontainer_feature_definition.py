@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Dict, List, Optional, Union
 from unittest import mock
 
+from nanolayer.installers.devcontainer_feature.oci_feature import OCIFeature
 from pydantic import BaseModel, Extra, Field
 
 from dcontainer.devcontainer.models.devcontainer_feature import Feature
@@ -53,5 +54,26 @@ class FeatureDefinition(Feature):
     )
 
     def to_feature_model(self) -> Feature:
+        if self.dependencies is not None:
+            for dependency in self.dependencies:
+                dependency_feature_obj: Feature = (
+                    OCIFeature.get_devcontainer_feature_obj(dependency.feature)
+                )
+                if (
+                    dependency_feature_obj.privileged is not None
+                    and dependency_feature_obj.privileged
+                ):
+                    self.privileged = True
+
+                if dependency_feature_obj.mounts is not None:
+                    if self.mounts is None:
+                        self.mounts = []
+                    stringified_mounts = [
+                        mount.json(sort_keys=True) for mount in self.mounts
+                    ]
+                    for mount_dict in dependency_feature_obj.mounts:
+                        if mount_dict.json(sort_keys=True) not in stringified_mounts:
+                            self.mounts.append(mount_dict)
+
         with mock.patch.object(Feature.Config, "extra", Extra.ignore):
             return Feature(**self.dict())
