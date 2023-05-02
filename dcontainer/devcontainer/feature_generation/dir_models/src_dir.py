@@ -34,7 +34,6 @@ class SrcDir(Directory):
             options=definition_model.options,
             dependencies=definition_model.dependencies,
             nanolayer_version=nanolayer_version,
-            entrypoint=feature_model.entrypoint,
         )
         virtual_dir[f"{feature_id}/README.md"] = ReadmeMD(
             definition_model=definition_model,

@@ -51,7 +51,6 @@ class InstallSH(File):
         dependencies: Optional[FeatureDependencies],
         options: Optional[Dict[str, FeatureOption]],
         nanolayer_version: Optional[str] = None,
-        entrypoint: Optional[str] = None,
     ) -> None:
         self.install_command = install_command
         self.dependencies = dependencies or []

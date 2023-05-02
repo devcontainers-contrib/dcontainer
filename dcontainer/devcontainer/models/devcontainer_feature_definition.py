@@ -8,6 +8,8 @@ from pydantic import BaseModel, Extra, Field
 
 from dcontainer.devcontainer.models.devcontainer_feature import Feature
 
+FEATURE_CACHE = {}
+
 
 class FeatureDependency(BaseModel):
     feature: str
@@ -53,12 +55,22 @@ class FeatureDefinition(Feature):
         description="List of test scenarios to prepare testing different use cases",
     )
 
-    def to_feature_model(self) -> Feature:
+    def to_feature_model(self, no_cache: bool = False) -> Feature:
         if self.dependencies is not None:
             for dependency in self.dependencies:
-                dependency_feature_obj: Feature = (
-                    OCIFeature.get_devcontainer_feature_obj(dependency.feature)
-                )
+                if no_cache:
+                    dependency_feature_obj: Feature = (
+                        OCIFeature.get_devcontainer_feature_obj(dependency.feature)
+                    )
+                else:
+                    dependency_feature_obj = FEATURE_CACHE.get(dependency.feature, None)
+                    if dependency_feature_obj is None:
+                        dependency_feature_obj: Feature = (
+                            OCIFeature.get_devcontainer_feature_obj(dependency.feature)
+                        )
+
+                        FEATURE_CACHE[dependency.feature] = dependency_feature_obj
+
                 if (
                     dependency_feature_obj.privileged is not None
                     and dependency_feature_obj.privileged
