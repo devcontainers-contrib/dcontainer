@@ -1,9 +1,9 @@
 {
-    "id": "ory-oathkeeper",
+    "id": "ory-keto",
     "version": "1.0.0",
-    "name": "Ory Oathkeeper (via Github Releases)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ory-oathkeeper",
-    "description": "ORY Oathkeeper is an Identity & Access Proxy (IAP) and Access Control Decision API that authorizes HTTP requests based on sets of Access Rules.",
+    "name": "Ory Keto (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ory-keto",
+    "description": "Ory Keto is an implementation of 'Zanzibar: Google's Consistent, Global Authorization System'. Ships gRPC, REST APIs, newSQL, and an easy and granular permission language. Supports ACL, RBAC, and other access models.",
     "options": {
         "version": {
             "default": "latest",
@@ -21,10 +21,10 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
             "options": {
-                "repo": "ory/oathkeeper",
-                "binaryNames": "oathkeeper",
+                "repo": "ory/keto",
+                "binaryNames": "keto",
                 "version": "$options.version",
-                "assetRegex": ".*(sqlite).*"
+                "assetRegex": ".*(Linux_64).*"
 
             }
         }
@@ -35,7 +35,7 @@
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "oathkeeper version"
+                "keto version"
             ],
             "options": {}
         }

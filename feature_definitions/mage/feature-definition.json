@@ -33,7 +33,7 @@
             "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "mage version"
+                "mage --version"
             ],
             "options": {}
         }

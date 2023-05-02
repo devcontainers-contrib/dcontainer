@@ -2,8 +2,9 @@ import os
 import shutil
 from pathlib import Path
 from typing import Optional
-from tqdm import tqdm
+
 import typer
+from tqdm import tqdm
 
 from dcontainer.devcontainer.feature_generation.oci_feature_generator import (
     OCIFeatureGenerator,
