@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.17",
             "options": {
                 "repo": "sharkdp/hyperfine",
                 "binaryNames": "hyperfine",
