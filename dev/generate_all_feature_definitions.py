@@ -2,7 +2,7 @@ import os
 import shutil
 from pathlib import Path
 from typing import Optional
-
+from tqdm import tqdm
 import typer
 
 from dcontainer.devcontainer.feature_generation.oci_feature_generator import (
@@ -31,7 +31,7 @@ def generate_all_Feature_definitions(
 ) -> None:
     assert nanolayer_version.startswith("v")
 
-    for feature_name in os.listdir(feature_definitions_dir):
+    for feature_name in tqdm(os.listdir(feature_definitions_dir)):
         feature_definition_file = os.path.join(
             feature_definitions_dir, feature_name, "feature-definition.json"
         )

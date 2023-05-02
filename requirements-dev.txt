@@ -9,3 +9,4 @@ wheel
 invoke
 setuptools-scm 
 packaging
+tqdm
