@@ -1,9 +1,9 @@
 {
-    "id": "surge-cli",
+    "id": "snyk-cli",
     "version": "1.0.0",
-    "name": "Surge CLI (via npm)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/surge-cli",
-    "description": "Publish HTML, CSS, and JS for free, without leaving the command line.",
+    "name": "Snyk CLI (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/snyk-cli",
+    "description": "Snyk CLI scans and monitors your projects for security vulnerabilities.",
     "options": {
         "version": {
             "default": "latest",
@@ -21,7 +21,7 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
             "options": {
-                "package": "surge",
+                "package": "snyk@latest",
                 "version": "$options.version"
             }
         }
@@ -32,7 +32,7 @@
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "surge --version"
+                "snyk --version"
             ],
             "options": {}
         }

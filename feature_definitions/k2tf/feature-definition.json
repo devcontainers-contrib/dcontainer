@@ -1,9 +1,9 @@
 {
-    "id": "surge-cli",
+    "id": "k2tf",
     "version": "1.0.0",
-    "name": "Surge CLI (via npm)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/surge-cli",
-    "description": "Publish HTML, CSS, and JS for free, without leaving the command line.",
+    "name": "k2tf (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/k2tf",
+    "description": "k2tf is a tool for converting Kubernetes API Objects (in YAML format) into HashiCorp's Terraform configuration language.",
     "options": {
         "version": {
             "default": "latest",
@@ -15,13 +15,14 @@
         }
     },
     "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/npm-package"
+        "ghcr.io/devcontainers-contrib/features/gh-release"
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
             "options": {
-                "package": "surge",
+                "repo": "sl1pm4t/k2tf",
+                "binaryNames": "k2tf",
                 "version": "$options.version"
             }
         }
@@ -29,10 +30,10 @@
     "install_command": "echo 'Done!'",
     "test_scenarios": [
         {
-            "name": "test",
+            "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "surge --version"
+                "k2tf --version"
             ],
             "options": {}
         }

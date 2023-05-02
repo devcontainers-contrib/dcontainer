@@ -1,9 +1,9 @@
 {
-    "id": "shopify-cli",
+    "id": "squarespace-server",
     "version": "1.0.0",
-    "name": "Shopify CLI (via npm)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/shopify-cli",
-    "description": "Shopify CLI is a command-line interface tool that helps you build Shopify apps and themes. It quickly generates Shopify apps, themes, and custom storefronts. You can also use it to automate many common development tasks.",
+    "name": "Squarespace Local Development Server (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/squarespace-server",
+    "description": "The Squarespace local development server is a command line tool that sets up a test server on your computer, allowing you to see changes to your template before making them live",
     "options": {
         "version": {
             "default": "latest",
@@ -21,14 +21,7 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
             "options": {
-                "package": "@shopify/cli",
-                "version": "$options.version"
-            }
-        },
-        {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
-            "options": {
-                "package": "@shopify/theme",
+                "package": "@squarespace/server",
                 "version": "$options.version"
             }
         }
@@ -39,7 +32,7 @@
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "shopify --version"
+                "squarespace-server --version"
             ],
             "options": {}
         }

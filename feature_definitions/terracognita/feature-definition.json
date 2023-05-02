@@ -1,9 +1,9 @@
 {
-    "id": "surge-cli",
+    "id": "terracognita",
     "version": "1.0.0",
-    "name": "Surge CLI (via npm)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/surge-cli",
-    "description": "Publish HTML, CSS, and JS for free, without leaving the command line.",
+    "name": "TerraCognita (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/terracognita",
+    "description": "TerraCognita is open-source software that quickly and automatically creates Terraform from all of your manually-provisioned resources.",
     "options": {
         "version": {
             "default": "latest",
@@ -15,13 +15,14 @@
         }
     },
     "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/npm-package"
+        "ghcr.io/devcontainers-contrib/features/gh-release"
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
             "options": {
-                "package": "surge",
+                "repo": "cycloidio/terracognita",
+                "binaryNames": "terracognita",
                 "version": "$options.version"
             }
         }
@@ -29,10 +30,10 @@
     "install_command": "echo 'Done!'",
     "test_scenarios": [
         {
-            "name": "test",
+            "name": "test_defaults_debian",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "surge --version"
+                "terracognita version"
             ],
             "options": {}
         }

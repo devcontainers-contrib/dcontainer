@@ -1,9 +1,9 @@
 {
-    "id": "surge-cli",
+    "id": "former2-cli",
     "version": "1.0.0",
-    "name": "Surge CLI (via npm)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/surge-cli",
-    "description": "Publish HTML, CSS, and JS for free, without leaving the command line.",
+    "name": "Former2 CLI (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/former2-cli",
+    "description": "The Former2 CLI allows you to use the former2.com tool directly from your command line.",
     "options": {
         "version": {
             "default": "latest",
@@ -21,7 +21,14 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
             "options": {
-                "package": "surge",
+                "package": "former2",
+                "version": "$options.version"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "options": {
+                "package": "@shopify/theme",
                 "version": "$options.version"
             }
         }
@@ -32,7 +39,7 @@
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "surge --version"
+                "former2 --version"
             ],
             "options": {}
         }
