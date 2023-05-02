@@ -1,6 +1,6 @@
 {
     "id": "dufs",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "name": "Dufs (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/dufs",
     "description": "Dufs is a distinctive utility file server that supports static serving, uploading, searching, accessing control, webdav and more.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "sigoden/dufs",
                 "binaryNames": "dufs",

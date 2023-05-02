@@ -1,6 +1,6 @@
 {
     "id": "trivy",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "Trivy (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/trivy",
     "description": "Trivy is a comprehensive and versatile security scanner. It finds vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "aquasecurity/trivy",
                 "binaryNames": "trivy",

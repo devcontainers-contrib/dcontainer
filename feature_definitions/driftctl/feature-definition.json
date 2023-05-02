@@ -1,6 +1,6 @@
 {
     "id": "driftctl",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "driftctl (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/driftctl",
     "description": "driftctl detect, track and alert on infrastructure drift.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "snyk/driftctl",
                 "binaryNames": "driftctl",

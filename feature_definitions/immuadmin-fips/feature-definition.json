@@ -1,6 +1,6 @@
 {
     "id": "immuadmin-fips",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "immuadmin (FIPS) (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/immuadmin-fips",
     "description": "immuadmin is the admin CLI for immudb and immugw. You can install and manage the service installation for both components and get statistics as well as runtime information.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "codenotary/immudb",
                 "binaryNames": "immuadmin",

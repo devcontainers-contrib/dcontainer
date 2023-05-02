@@ -1,6 +1,6 @@
 {
     "id": "tea",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "tea (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tea",
     "description": "tea is the next-generation, cross-platform package manager from the creator of brew.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "teaxyz/cli",
                 "binaryNames": "tea",

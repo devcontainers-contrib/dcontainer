@@ -1,6 +1,6 @@
 {
     "id": "act",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "name": "act (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/act",
     "description": "Act is an open source project that allows you to run your github flow locally.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "nektos/act",
                 "binaryNames": "act",

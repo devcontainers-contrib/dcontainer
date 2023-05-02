@@ -1,6 +1,6 @@
 {
     "id": "fd",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "name": "fd (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/fd",
     "description": "fd is a simple, fast and user-friendly alternative to 'find'.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "sharkdp/fd",
                 "binaryNames": "fd",

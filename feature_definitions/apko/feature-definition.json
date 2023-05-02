@@ -1,6 +1,6 @@
 {
     "id": "apko",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "apko (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/apko",
     "description": "apko is an apk-based OCI image builder",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "chainguard-dev/apko",
                 "binaryNames": "apko",

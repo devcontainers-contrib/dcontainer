@@ -1,6 +1,6 @@
 {
     "id": "tfsec",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "tfsec (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tfsec",
     "description": "tfsec is a static analysis security scanner for your Terraform code. Designed to run locally and in your CI pipelines, developer-friendly output and fully documented checks mean detection and remediation can take place as quickly and efficiently as possible",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "aquasecurity/tfsec",
                 "binaryNames": "tfsec",

@@ -1,6 +1,6 @@
 {
     "id": "ory-keto",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Ory Keto (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ory-keto",
     "description": "Ory Keto is an implementation of 'Zanzibar: Google's Consistent, Global Authorization System'. Ships gRPC, REST APIs, newSQL, and an easy and granular permission language. Supports ACL, RBAC, and other access models.",
@@ -19,13 +19,12 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "ory/keto",
                 "binaryNames": "keto",
                 "version": "$options.version",
                 "assetRegex": ".*(Linux_64).*"
-
             }
         }
     ],

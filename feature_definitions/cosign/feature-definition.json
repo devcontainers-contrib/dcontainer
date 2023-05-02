@@ -1,6 +1,6 @@
 {
     "id": "cosign",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "Cosign (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/cosign",
     "description": "Cosign is a command line utility that can sign and verify software artifact, such as container images and blobs.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "sigstore/cosign",
                 "binaryNames": "cosign",

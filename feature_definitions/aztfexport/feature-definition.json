@@ -1,6 +1,6 @@
 {
     "id": "aztfexport",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "aztfexport (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/aztfexport",
     "description": "aztfexport is a tool to bring existing Azure resources under Terraform's management.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "Azure/aztfexport",
                 "binaryNames": "aztfexport",

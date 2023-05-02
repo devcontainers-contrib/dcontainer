@@ -1,6 +1,6 @@
 {
     "id": "gh-cli",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "name": "GitHub CLI (via GitHub Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gh-cli",
     "description": "GitHub CLI is a command-line interface to GitHub for use in your terminal or your scripts.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "cli/cli",
                 "binaryNames": "gh",

@@ -1,6 +1,6 @@
 {
     "id": "xplr",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "xplr (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/xplr",
     "description": "xplr is a terminal UI based file explorer that aims to increase our terminal productivity by being a flexible, interactive orchestrator for the ever growing awesome command-line utilities that work with the file-system.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.14",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.16",
             "options": {
                 "repo": "sayanarijit/xplr",
                 "binaryNames": "xplr",
