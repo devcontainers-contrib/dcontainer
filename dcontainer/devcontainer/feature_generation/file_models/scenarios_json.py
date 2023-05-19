@@ -12,7 +12,7 @@ class ScenariosJson(File):
         for test_scenario in test_scenarios:
             scenarios[test_scenario.name] = {
                 "image": test_scenario.image,
-                "features": {feature_id: test_scenario.options or {}},
+                "features": {**{feature_id: test_scenario.options or {}}, **test_scenario.features},
             }
 
         super().__init__(json.dumps(scenarios, indent=4).encode())

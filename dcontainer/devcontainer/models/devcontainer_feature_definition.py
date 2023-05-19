@@ -21,6 +21,7 @@ class TestScenario(BaseModel):
     image: str
     test_commands: List[str]
     options: Dict[str, Union[str, bool]]
+    features: Dict[str, Dict[str, Union[str, bool]]] = {}
 
 
 class FeatureDependencies(BaseModel):
