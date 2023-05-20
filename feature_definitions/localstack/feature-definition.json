@@ -36,6 +36,7 @@
             "feature": "ghcr.io/devcontainers/features/python:1.1.0",
             "options": {
                 "installTools": false,
+                "OVERRIDEDEFAULTVERSION": false,
                 "version": "3.10.8"
             }
         },
