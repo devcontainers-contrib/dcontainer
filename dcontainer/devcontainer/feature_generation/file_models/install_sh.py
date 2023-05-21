@@ -106,12 +106,15 @@ class InstallSH(File):
         return param_value.startswith(cls.REF_PREFIX)
 
     def create_install_command(self, feature_oci: str, params: Dict[str, str]) -> str:
-        stringified_envs_args = " ".join(
-            [f"--option {env}={val}" for env, val in params.items()]
-        )
+        if params:
+            stringified_envs_args = " ".join(
+                [f"--option {env}={val}" for env, val in params.items()]
+            )
 
-        stringified_envs_args = f"\\\n {stringified_envs_args}"
-
+            stringified_envs_args = f"\\\n    {stringified_envs_args}"
+        else:
+            stringified_envs_args = ""
+            
         return SINGLE_DEPENDENCY.format(
             stringified_envs_args=stringified_envs_args, feature_oci=feature_oci
         )
