@@ -80,7 +80,8 @@
 
     },
     "containerEnv": {
-        "PATH": "/usr/local/porter:${PATH}"
+        "PATH": "/usr/local/porter:${PATH}",
+        "PORTER_HOME": "/usr/local/porter"
     },
     "dependencies": [
         {
