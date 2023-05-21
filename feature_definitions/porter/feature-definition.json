@@ -76,6 +76,22 @@
                 "latest"
             ],
             "type": "string"
+        },
+        "azurePluginVersion": {
+            "default": "latest",
+            "description": "Select the azure plugin version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        },
+        "kubernetesPluginVersion": {
+            "default": "latest",
+            "description": "Select the kubernetes plugin version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
         }
 
     },
@@ -141,6 +157,18 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
+                "command": "/usr/local/porter/porter plugin install azure --version $AZUREPLUGINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter plugin install kubernetes --version $KUBERNETESPLUGINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
                 "command": "chown -hR ${_REMOTE_USER}:${_REMOTE_USER} /usr/local/porter"
             }
         }
@@ -159,7 +187,9 @@
                 "porter mixin list | grep docker-compose",
                 "porter mixin list | grep gcloud",
                 "porter mixin list | grep helm",
-                "porter mixin list | grep arm"
+                "porter mixin list | grep arm",
+                "porter plugin list | grep azure",
+                "porter plugin list | grep kubernetes"
             ],
             "options": {}
         }
