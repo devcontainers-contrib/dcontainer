@@ -21,7 +21,7 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
             "options": {
-                "package": "projen",
+                "package": "pnpm",
                 "version": "$options.version"
             }
         }
