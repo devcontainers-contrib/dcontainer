@@ -82,14 +82,11 @@
     "containerEnv": {
         "PATH": "/usr/local/porter:${PATH}"
     },
-    "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/pipx-package"
-    ],
     "dependencies": [
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
-                "command": "PORTER_VERSION=$VERSION PORTER_HOME=/usr/local/porter curl -L https://cdn.porter.sh/latest/install-linux.sh | bash -s -- -x"
+                "command": "curl -L https://cdn.porter.sh/latest/install-linux.sh | PORTER_VERSION=$VERSION PORTER_HOME=/usr/local/porter bash -s -- -x"
             }
         },
         {
@@ -101,7 +98,43 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
             "options": {
-                "command": "/usr/local/porter/porter mixin install az --version AZMIXINVERSION"
+                "command": "/usr/local/porter/porter mixin install az --version $AZMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install aws --version $AWSMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install docker --version $DOCKERMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install docker-compose --version $DOCKERCOMPOSEMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install gcloud --version $GCLOUDMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install helm --version $HELMMIXINVERSION"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "/usr/local/porter/porter mixin install arm --version $ARMMIXINVERSION"
             }
         }
     ],
@@ -111,7 +144,15 @@
             "name": "test",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
-                "porter --version"
+                "porter --version",
+                "porter mixin list | grep terraform",
+                "porter mixin list | grep az",
+                "porter mixin list | grep aws",
+                "porter mixin list | grep docker",
+                "porter mixin list | grep docker-compose",
+                "porter mixin list | grep gcloud",
+                "porter mixin list | grep helm",
+                "porter mixin list | grep arm"
             ],
             "options": {}
         }
