@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 SINGLE_DEPENDENCY = """$nanolayer_location \\
     install \\
     devcontainer-feature \\
-    "{feature_oci}" \\
-    {stringified_envs_args}
+    "{feature_oci}" {stringified_envs_args}
+    
 """
 
 HEADER = """#!/bin/bash -i
@@ -109,6 +109,8 @@ class InstallSH(File):
         stringified_envs_args = " ".join(
             [f"--option {env}={val}" for env, val in params.items()]
         )
+
+        stringified_envs_args = f"\\\n {stringified_envs_args}"
 
         return SINGLE_DEPENDENCY.format(
             stringified_envs_args=stringified_envs_args, feature_oci=feature_oci
