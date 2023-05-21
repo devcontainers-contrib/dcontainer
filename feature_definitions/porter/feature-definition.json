@@ -136,6 +136,12 @@
             "options": {
                 "command": "/usr/local/porter/porter mixin install arm --version $ARMMIXINVERSION"
             }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/bash-command:1.0.0",
+            "options": {
+                "command": "chown -hR ${_REMOTE_USER}:${_REMOTE_USER} /usr/local/porter"
+            }
         }
     ],
     "install_command": "echo 'Done!'",
