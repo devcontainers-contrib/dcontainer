@@ -36,6 +36,15 @@
             ],
             "options": {},
             "features": {}
+        },
+        {
+            "name": "test_existing_but_different_version",
+            "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+            "test_commands": [
+                "pnpm -v | grep 7.26.3"
+            ],
+            "options": { "version": "7.26.3"},
+            "features": {}
         }
     ]
 }
