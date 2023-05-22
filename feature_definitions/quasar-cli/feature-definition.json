@@ -1,6 +1,6 @@
 {
     "id": "quasar-cli",
-    "version": "2.0.13",
+    "version": "2.0.14",
     "name": "Quasar CLI (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/quasar-cli",
     "description": "Quasar is an MIT licensed open-source Vue.js based framework, which allows you as a web developer to quickly create responsive websites/apps in many flavours.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "@quasar/cli",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "quasar --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

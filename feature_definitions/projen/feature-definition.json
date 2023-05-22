@@ -1,6 +1,6 @@
 {
     "id": "projen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "projen (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/projen",
     "description": "projen synthesizes project configuration files such as package.json, tsconfig.json, .gitignore, GitHub Workflows, eslint, jest, etc from a well-typed definition written in JavaScript.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "projen",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "projen --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

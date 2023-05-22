@@ -1,6 +1,6 @@
 {
     "id": "edge-impulse-cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Edge Impulse CLI (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/edge-impulse-cli",
     "description": "Edge Impulse CLI is used to control local devices, act as a proxy to synchronise data for devices that don't have an internet connection, and to upload and convert local files.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "edge-impulse-cli",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "edge-impulse-daemon --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

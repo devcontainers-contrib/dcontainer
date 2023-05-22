@@ -1,6 +1,6 @@
 {
     "id": "vtop",
-    "version": "2.0.13",
+    "version": "2.0.14",
     "name": "vtop (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/vtop",
     "description": "vtop is a graphical activity monitor for the command line.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "vtop",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "vtop --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

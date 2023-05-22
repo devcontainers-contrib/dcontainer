@@ -1,6 +1,6 @@
 {
     "id": "shopify-cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Shopify CLI (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/shopify-cli",
     "description": "Shopify CLI is a command-line interface tool that helps you build Shopify apps and themes. It quickly generates Shopify apps, themes, and custom storefronts. You can also use it to automate many common development tasks.",
@@ -19,14 +19,14 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "@shopify/cli",
                 "version": "$options.version"
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "@shopify/theme",
                 "version": "$options.version"
@@ -41,7 +41,8 @@
             "test_commands": [
                 "shopify --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

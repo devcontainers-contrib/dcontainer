@@ -1,6 +1,6 @@
 {
     "id": "jsii-pacmak",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "jsii-pacmak (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/jsii-pacmak",
     "description": "jsii-pacmak generates ready-to-publish language-specific packages for jsii modules, part of the jsii project.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "jsii-pacmak",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "jsii-pacmak --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

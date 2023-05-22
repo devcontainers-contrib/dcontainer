@@ -1,6 +1,6 @@
 {
     "id": "cloudflare-wrangler",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Cloudflare Workers CLI (Wrangler) (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/cloudflare-wrangler",
     "description": "The Workers command-line interface, Wrangler, allows you to create, test, and deploy your Workers projects.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "wrangler",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "wrangler --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

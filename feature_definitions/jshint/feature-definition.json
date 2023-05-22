@@ -1,6 +1,6 @@
 {
     "id": "jshint",
-    "version": "2.0.13",
+    "version": "2.0.14",
     "name": "JSHint (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/jshint",
     "description": "JSHint is a tool that helps to detect errors and potential problems in your JavaScript code.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.2",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "jshint",
                 "version": "$options.version"
@@ -34,7 +34,8 @@
             "test_commands": [
                 "jshint --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }
