@@ -1,0 +1,62 @@
+{
+    "id": "rabbitmq-asdf",
+    "version": "1.0.0",
+    "name": "Rabbitmq (via asdf)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubectl-asdf",
+    "description": "Installs Rabbitmq",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        },
+        "erlangVersion": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/asdf-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.4",
+            "options": {
+                "packages": "build-essential,autoconf,m4,libncurses5-dev,libwxgtk3.0-gtk3-dev,libwxgtk-webview3.0-gtk3-dev,libgl1-mesa-dev,libglu1-mesa-dev,libpng-dev,libssh-dev,unixodbc-dev,xsltproc,fop,libxml2-utils,libncurses-dev,openjdk-11-jdk"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.6",
+            "options": {
+                "plugin": "erlang",
+                "version": "$options.erlangVersion"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.6",
+            "options": {
+                "plugin": "rabbitmq",
+                "version": "$options.version",
+                "latestVersionPattern": "v"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "rabbitmqctl --version"
+            ],
+            "options": {}
+        }
+    ]
+}
