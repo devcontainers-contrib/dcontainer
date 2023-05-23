@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "name": "Rabbitmq (via asdf)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubectl-asdf",
-    "description": "Installs Rabbitmq",
+    "description": "RabbitMQ is a feature rich, multi-protocol messaging and streaming broker.",
     "options": {
         "version": {
             "default": "latest",
@@ -33,14 +33,20 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.7",
             "options": {
                 "plugin": "erlang",
                 "version": "$options.erlangVersion"
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.4",
+            "options": {
+                "packages": "xz-utils"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.7",
             "options": {
                 "plugin": "rabbitmq",
                 "version": "$options.version",
