@@ -1,5 +1,6 @@
 from typing import Optional
-
+import os
+import glob
 from easyfs import Directory
 
 from dcontainer.devcontainer.feature_generation.dir_models.src_dir import SrcDir
@@ -28,3 +29,9 @@ class OCIFeatureGenerator:
 
         # manifesting the virtual directory into local filesystem
         virtual_dir.create(output_dir)
+
+        for file_path in  glob.glob(os.path.join(output_dir, "test",str(definition_model.id), "*.sh")):
+            os.chmod(file_path, int("755", base=8))
+
+        for file_path in  glob.glob(os.path.join(output_dir, "src",str(definition_model.id),"install.sh")):
+            os.chmod(file_path, int("755", base=8))
