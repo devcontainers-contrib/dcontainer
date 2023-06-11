@@ -1,6 +1,6 @@
 {
     "id": "eget",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "name": "Eget (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/eget",
     "description": "Eget easily install prebuilt binaries from GitHub.",
@@ -35,7 +35,8 @@
             "test_commands": [
                 "eget --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

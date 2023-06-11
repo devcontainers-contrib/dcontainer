@@ -1,6 +1,6 @@
 {
     "id": "youtubeuploader",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Youtube Uploader (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/youtubeuploader",
     "description": "Scripted uploads to Youtube.",
@@ -35,7 +35,8 @@
             "test_commands": [
                 "youtubeuploader --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }
