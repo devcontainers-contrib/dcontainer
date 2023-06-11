@@ -37,7 +37,7 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.17",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
             "options": {
                 "repo": "caddyserver/caddy",
                 "binaryNames": "caddy",
