@@ -1,0 +1,41 @@
+{
+    "id": "prettier",
+    "version": "1.0.0",
+    "name": "Prettier (via npm)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/prettier",
+    "description": "Prettier is an opinionated code formatter.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/npm-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
+            "options": {
+                "package": "prettier",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "prettier --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
