@@ -1,0 +1,41 @@
+{
+    "id": "chisel",
+    "version": "1.0.0",
+    "name": "Chisel (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/chisel",
+    "description": "Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
+            "options": {
+                "repo": "jpillora/chisel",
+                "binaryNames": "chisel",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "chisel --version"
+            ],
+            "options": {}
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": "youtubeuploader",
+    "version": "1.0.0",
+    "name": "Youtube Uploader (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/youtubeuploader",
+    "description": "Scripted uploads to Youtube.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
+            "options": {
+                "repo": "porjo/youtubeuploader",
+                "binaryNames": "youtubeuploader",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "youtubeuploader --version"
+            ],
+            "options": {}
+        }
+    ]
+}
