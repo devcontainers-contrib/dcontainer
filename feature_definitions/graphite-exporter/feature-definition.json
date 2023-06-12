@@ -1,0 +1,42 @@
+{
+    "id": "graphite-exporter",
+    "version": "1.0.0",
+    "name": "Prometheus Graphite Exporter (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/graphite-exporter",
+    "description": "An exporter for metrics exported in the Graphite plaintext protocol.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.19",
+            "options": {
+                "repo": "prometheus/graphite_exporter",
+                "binaryNames": "graphite_exporter",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "graphite_exporter --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
