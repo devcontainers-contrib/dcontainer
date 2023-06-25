@@ -1,0 +1,42 @@
+{
+    "id": "ruff",
+    "version": "1.0.0",
+    "name": "Ruff (via pipx)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ruff",
+    "description": "Ruff is an extremely fast Python linter, written in Rust.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/pipx-package",
+        "ghcr.io/devcontainers/features/python"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
+            "options": {
+                "package": "ruff",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "ruff --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
