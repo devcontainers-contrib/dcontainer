@@ -1,6 +1,6 @@
 {
     "id": "protoc-asdf",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "protoc (via asdf)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/protoc-asdf",
     "description": "protoc is the protocol buffer compiler",
@@ -34,7 +34,8 @@
             "test_commands": [
                 "protoc --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         },
         {
             "name": "test_specified_version",
@@ -44,7 +45,8 @@
             ],
             "options": {
                 "version": "3.14.0"
-            }
+            },
+            "features": {}
         }
     ]
 }

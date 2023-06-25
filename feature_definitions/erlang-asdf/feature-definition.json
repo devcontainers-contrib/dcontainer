@@ -1,6 +1,6 @@
 {
     "id": "erlang-asdf",
-    "version": "2.0.15",
+    "version": "2.0.16",
     "name": "Erlang (via asdf)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/erlang-asdf",
     "description": "Erlang is a general-purpose, concurrent, functional programming language, and a garbage-collected runtime system.",
@@ -41,7 +41,8 @@
             "test_commands": [
                 "erl -eval '{ok, Version} = file:read_file(filename:join([code:root_dir(), \"releases\", erlang:system_info(otp_release), \"OTP_VERSION\"])), io:fwrite(Version), halt().' -noshell"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }
