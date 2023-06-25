@@ -49,6 +49,15 @@
             "features": {}
         },
         {
+            "name": "test_debian_bookworm",
+            "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+            "test_commands": [
+                "ansible --version"
+            ],
+            "options": {},
+            "features": {}
+        },
+        {
             "name": "test_version_selection",
             "image": "mcr.microsoft.com/devcontainers/base:debian",
             "test_commands": [
