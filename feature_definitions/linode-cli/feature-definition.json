@@ -1,6 +1,6 @@
 {
     "id": "linode-cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Linode CLI (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/linode-cli",
     "description": "Access the entire Linode platform from the command line, easily adding, removing, or modifing services.",
@@ -20,7 +20,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.3",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
             "options": {
                 "package": "linode-cli",
                 "version": "$options.version"
@@ -35,7 +35,8 @@
             "test_commands": [
                 "linode-cli --version"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         }
     ]
 }

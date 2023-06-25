@@ -1,6 +1,6 @@
 {
     "id": "localstack",
-    "version": "2.0.20",
+    "version": "2.0.21",
     "name": "Localstack (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/localstack",
     "description": "Localstack is a fully functional local AWS cloud stack.",
@@ -64,7 +64,8 @@
             "test_commands": [
                 "sleep 5 && docker ps && localstack --version && localstack start -d && sleep 10 && localstack status docker && localstack status services && localstack stop"
             ],
-            "options": {}
+            "options": {},
+            "features": {}
         },
         {
             "name": "test_with_python_feature",
