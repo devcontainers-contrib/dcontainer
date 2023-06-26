@@ -15,12 +15,11 @@
         }
     },
     "installsAfter": [
-        "ghcr.io/devcontainers/features/node",
-        "ghcr.io/devcontainers-conrib/features/npm-package"
+        "ghcr.io/devcontainers-contrib/features/npm-package"
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1",
+            "feature": "ghcr.io/devcontainers-contrib/features/npm-package:1.0.3",
             "options": {
                 "package": "auditjs",
                 "version": "$options.version"
