@@ -1,6 +1,6 @@
 {
     "id": "rabbitmq-asdf",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "Rabbitmq (via asdf)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubectl-asdf",
     "description": "RabbitMQ is a feature rich, multi-protocol messaging and streaming broker.",
@@ -29,11 +29,11 @@
         {
             "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.4",
             "options": {
-                "packages": "build-essential,autoconf,m4,libncurses5-dev,libwxgtk3.0-gtk3-dev,libwxgtk-webview3.0-gtk3-dev,libgl1-mesa-dev,libglu1-mesa-dev,libpng-dev,libssh-dev,unixodbc-dev,xsltproc,fop,libxml2-utils,libncurses-dev,openjdk-11-jdk"
+                "packages": "build-essential,autoconf,m4,libncurses5-dev,libwxgtk3.0-gtk3-dev,libwxgtk-webview3.0-gtk3-dev,libgl1-mesa-dev,libglu1-mesa-dev,libpng-dev,libssh-dev,unixodbc-dev,xsltproc,fop,libxml2-utils,libncurses-dev,openjdk-11-jdk,procps"
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.7",
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.8",
             "options": {
                 "plugin": "erlang",
                 "version": "$options.erlangVersion"
@@ -46,7 +46,7 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.7",
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.8",
             "options": {
                 "plugin": "rabbitmq",
                 "version": "$options.version",
@@ -58,7 +58,7 @@
     "test_scenarios": [
         {
             "name": "test",
-            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "image": "debian:bullseye",
             "test_commands": [
                 "rabbitmqctl --version"
             ],
