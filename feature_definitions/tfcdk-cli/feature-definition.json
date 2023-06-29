@@ -36,6 +36,15 @@
             ],
             "options": {},
             "features": {}
+        },
+        {
+            "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+            "name": "test_specific_version",
+            "test_commands": [
+                "cdktf --version | grep 0.17.0"
+            ],
+            "options": {"version": "0.17.0"},
+            "features": {}
         }
     ]
 }
