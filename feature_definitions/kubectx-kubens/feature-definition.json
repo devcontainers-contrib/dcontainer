@@ -1,0 +1,52 @@
+{
+    "id": "kubectx-kubens",
+    "version": "1.0.3",
+    "name": "Kubectx and Kubens (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubeclarity-cli",
+    "description": "kubectx is a tool to switch between contexts (clusters) on kubectl faster. kubens is a tool to switch between Kubernetes namespaces (and configure them for kubectl) easily.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version you would like to install (will apply for for both kubectx and kubens.)",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
+            "options": {
+                "repo": "ahmetb/kubectx",
+                "binaryNames": "kubectx",
+                "assetRegex": "kubectx.*",
+                "version": "$options.version"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
+            "options": {
+                "repo": "ahmetb/kubectx",
+                "binaryNames": "kubens",
+                "assetRegex": "kubens.*",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "kubectx --version", "kubens --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
