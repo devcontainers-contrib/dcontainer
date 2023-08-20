@@ -31,10 +31,10 @@ TEST_FEATURE_IDS = (
     "localstack",
     "micronaut-sdkman",
 )
-TEST_FEATURE_IDS = ["localstack"]
+TEST_FEATURE_IDS = ["kubectx-kubens"]
 
 TEST_FEATURE_PATHS = [
-    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.35")
+    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.46")
     for v in os.listdir(FEATURE_DEFINITION_DIR)
     if v in TEST_FEATURE_IDS
 ]
