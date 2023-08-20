@@ -2,7 +2,7 @@
     "id": "kubectx-kubens",
     "version": "1.0.3",
     "name": "Kubectx and Kubens (via Github Releases)",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubeclarity-cli",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubectx-kubens",
     "description": "kubectx is a tool to switch between contexts (clusters) on kubectl faster. kubens is a tool to switch between Kubernetes namespaces (and configure them for kubectl) easily.",
     "options": {
         "version": {
