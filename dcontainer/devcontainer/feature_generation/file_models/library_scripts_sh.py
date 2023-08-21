@@ -106,43 +106,39 @@ ensure_nanolayer() {{
     local variable_name=$1
 
     local required_version=$2
-    # normalize version
-    if ! [[ $required_version == v* ]]; then
-        required_version=v$required_version
-    fi
 
-    local nanolayer_location=""
+    local __nanolayer_location=""
 
     # If possible - try to use an already installed nanolayer
     if [[ -z "${{{force_cli_installation_env}}}" ]]; then
         if [[ -z "${{{cli_location_env}}}" ]]; then
             if type nanolayer >/dev/null 2>&1; then
                 echo "Found a pre-existing nanolayer in PATH"
-                nanolayer_location=nanolayer
+                __nanolayer_location=nanolayer
             fi
         elif [ -f "${{{cli_location_env}}}" ] && [ -x "${{{cli_location_env}}}" ] ; then
-            nanolayer_location=${{{cli_location_env}}}
-            echo "Found a pre-existing nanolayer which were given in env variable: $nanolayer_location"
+            __nanolayer_location=${{{cli_location_env}}}
+            echo "Found a pre-existing nanolayer which were given in env variable: $__nanolayer_location"
         fi
 
         # make sure its of the required version
-        if ! [[ -z "${{nanolayer_location}}" ]]; then
+        if ! [[ -z "${{__nanolayer_location}}" ]]; then
             local current_version
-            current_version=$($nanolayer_location --version)
+            current_version=$($__nanolayer_location --version)
             if ! [[ $current_version == v* ]]; then
                 current_version=v$current_version
             fi
 
             if ! [ $current_version == $required_version ]; then
                 echo "skipping usage of pre-existing nanolayer. (required version $required_version does not match existing version $current_version)"
-                nanolayer_location=""
+                __nanolayer_location=""
             fi
         fi
 
     fi
 
     # If not previuse installation found, download it temporarly and delete at the end of the script 
-    if [[ -z "${{nanolayer_location}}" ]]; then
+    if [[ -z "${{__nanolayer_location}}" ]]; then
 
         if [ "$(uname -sm)" == "Linux x86_64" ] || [ "$(uname -sm)" == "Linux aarch64" ]; then
             tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
@@ -168,7 +164,7 @@ ensure_nanolayer() {{
             
             tar xfzv $tmp_dir/$tar_filename -C "$tmp_dir"
             chmod a+x $tmp_dir/nanolayer
-            nanolayer_location=$tmp_dir/nanolayer
+            __nanolayer_location=$tmp_dir/nanolayer
       
 
         else
@@ -178,7 +174,7 @@ ensure_nanolayer() {{
     fi
 
     # Expose outside the resolved location
-    declare -g ${{variable_name}}=$nanolayer_location
+    export ${{variable_name}}=$__nanolayer_location
 
 }}
 
