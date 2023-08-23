@@ -20,11 +20,10 @@ SINGLE_DEPENDENCY = """$nanolayer_location \\
     
 """
 
-HEADER = """#!/bin/bash -i
-
+HEADER = """
 set -e
 
-source ./library_scripts.sh
+. ./library_scripts.sh
 
 # nanolayer is a cli utility which keeps container layers as small as possible
 # source code: https://github.com/devcontainers-contrib/nanolayer
@@ -114,7 +113,7 @@ class InstallSH(File):
             stringified_envs_args = f"\\\n    {stringified_envs_args}"
         else:
             stringified_envs_args = ""
-            
+
         return SINGLE_DEPENDENCY.format(
             stringified_envs_args=stringified_envs_args, feature_oci=feature_oci
         )

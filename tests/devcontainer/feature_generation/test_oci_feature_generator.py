@@ -13,7 +13,9 @@ TEST_FEATURE_IDS = (
     "actions-runner-noruntime-no-externals",
     "powershell",
     "ansible",
+    "pnpm",
     "alp-asdf",
+    "act-asdf",
     "kotlin-sdkman",
     "asdf-package",
     "angular-cli",
@@ -31,10 +33,10 @@ TEST_FEATURE_IDS = (
     "localstack",
     "micronaut-sdkman",
 )
-TEST_FEATURE_IDS = ["kubectx-kubens"]
+# TEST_FEATURE_IDS = ["direnv"]
 
 TEST_FEATURE_PATHS = [
-    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.4.46")
+    (v, os.path.join(FEATURE_DEFINITION_DIR, v), "v0.5.0")
     for v in os.listdir(FEATURE_DEFINITION_DIR)
     if v in TEST_FEATURE_IDS
 ]
@@ -104,4 +106,4 @@ def test_feature_dir_generation_and_run_devcontainer_tests(
     print(response.stdout)
     print(response.stderr)
 
-    assert response.exitcode == 0
+    assert response.returncode == 0

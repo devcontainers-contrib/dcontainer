@@ -4,8 +4,7 @@ from easyfs import File
 
 from dcontainer.utils.settings import ENV_CLI_LOCATION, ENV_FORCE_CLI_INSTALLATION
 
-HEADER = """#!/bin/bash -i
-
+HEADER = """
 
 clean_download() {{
     # The purpose of this function is to download a file with minimal impact on container layer size
@@ -16,13 +15,13 @@ clean_download() {{
     # The above steps will minimize the leftovers being created while installing the downloader 
     # Supported distros:
     #  debian/ubuntu/alpine
-    
+
     url=$1
     output_location=$2
     tempdir=$(mktemp -d)
     downloader_installed=""
 
-    function _apt_get_install() {{
+    _apt_get_install() {{
         tempdir=$1
 
         # copy current state of apt list - in order to revert back later (minimize contianer layer size) 
@@ -31,7 +30,7 @@ clean_download() {{
         apt-get -y install --no-install-recommends wget ca-certificates
     }}
 
-    function _apt_get_cleanup() {{
+    _apt_get_cleanup() {{
         tempdir=$1
 
         echo "removing wget"
@@ -42,7 +41,7 @@ clean_download() {{
         rm -r /var/lib/apt/lists && mv $tempdir/lists /var/lib/apt/lists
     }}
 
-    function _apk_install() {{
+    _apk_install() {{
         tempdir=$1
         # copy current state of apk cache - in order to revert back later (minimize contianer layer size) 
         cp -p -R /var/cache/apk $tempdir 
@@ -50,7 +49,7 @@ clean_download() {{
         apk add --no-cache  wget
     }}
 
-    function _apk_cleanup() {{
+    _apk_cleanup() {{
         tempdir=$1
 
         echo "removing wget"
@@ -110,8 +109,8 @@ ensure_nanolayer() {{
     local __nanolayer_location=""
 
     # If possible - try to use an already installed nanolayer
-    if [[ -z "${{{force_cli_installation_env}}}" ]]; then
-        if [[ -z "${{{cli_location_env}}}" ]]; then
+    if [ -z "${{{force_cli_installation_env}}}" ]; then
+        if [ -z "${{{cli_location_env}}}" ]; then
             if type nanolayer >/dev/null 2>&1; then
                 echo "Found a pre-existing nanolayer in PATH"
                 __nanolayer_location=nanolayer
@@ -122,10 +121,10 @@ ensure_nanolayer() {{
         fi
 
         # make sure its of the required version
-        if ! [[ -z "${{__nanolayer_location}}" ]]; then
+        if ! [ -z "${{__nanolayer_location}}" ]; then
             local current_version
             current_version=$($__nanolayer_location --version)
-            if ! [[ $current_version == v* ]]; then
+            if ! [ $current_version == v* ]; then
                 current_version=v$current_version
             fi
 
@@ -138,9 +137,9 @@ ensure_nanolayer() {{
     fi
 
     # If not previuse installation found, download it temporarly and delete at the end of the script 
-    if [[ -z "${{__nanolayer_location}}" ]]; then
+    if [ -z "${{__nanolayer_location}}" ]; then
 
-        if [ "$(uname -sm)" == "Linux x86_64" ] || [ "$(uname -sm)" == "Linux aarch64" ]; then
+        if [ "$(uname -sm)" = 'Linux x86_64' ] || [ "$(uname -sm)" = "Linux aarch64" ]; then
             tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
 
             clean_up () {{
