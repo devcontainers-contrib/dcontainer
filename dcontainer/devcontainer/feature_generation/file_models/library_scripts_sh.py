@@ -124,9 +124,7 @@ ensure_nanolayer() {{
         if ! [ -z "${{__nanolayer_location}}" ]; then
             local current_version
             current_version=$($__nanolayer_location --version)
-            if ! [ $current_version == v* ]; then
-                current_version=v$current_version
-            fi
+
 
             if ! [ $current_version == $required_version ]; then
                 echo "skipping usage of pre-existing nanolayer. (required version $required_version does not match existing version $current_version)"
