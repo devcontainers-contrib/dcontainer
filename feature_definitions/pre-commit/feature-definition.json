@@ -31,7 +31,7 @@
     "test_scenarios": [
         {
             "name": "test",
-            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
             "test_commands": [
                 "pre-commit --version"
             ],
