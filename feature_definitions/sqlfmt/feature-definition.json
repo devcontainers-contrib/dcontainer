@@ -1,6 +1,6 @@
 {
     "id": "sqlfmt",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "sqlfmt (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/sqlfmt",
     "description": "sqlfmt formats your dbt SQL files so you don't have to.",
@@ -20,7 +20,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.7",
             "options": {
                 "package": "shandy-sqlfmt[jinjafmt]",
                 "version": "$options.version"

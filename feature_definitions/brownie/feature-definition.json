@@ -1,6 +1,6 @@
 {
     "id": "brownie",
-    "version": "2.0.16",
+    "version": "2.0.17",
     "name": "Brownie (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/brownie",
     "description": "Brownie is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine.",
@@ -40,7 +40,7 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.7",
             "options": {
                 "package": "eth-brownie",
                 "version": "$options.version"

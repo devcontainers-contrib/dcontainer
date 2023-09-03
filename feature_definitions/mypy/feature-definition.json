@@ -1,6 +1,6 @@
 {
     "id": "mypy",
-    "version": "2.0.16",
+    "version": "2.0.17",
     "name": "Mypy (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/mypy",
     "description": "Mypy is a static type checker for Python.",
@@ -20,7 +20,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.7",
             "options": {
                 "package": "mypy",
                 "version": "$options.version"

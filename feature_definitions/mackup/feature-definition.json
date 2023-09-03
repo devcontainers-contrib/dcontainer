@@ -1,6 +1,6 @@
 {
     "id": "mackup",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "name": "Mackup (via pipx)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/mackup",
     "description": "Mackup keeps your application settings in sync (OS X/Linux).",
@@ -20,7 +20,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.6",
+            "feature": "ghcr.io/devcontainers-contrib/features/pipx-package:1.1.7",
             "options": {
                 "package": "mackup",
                 "version": "$options.version"
