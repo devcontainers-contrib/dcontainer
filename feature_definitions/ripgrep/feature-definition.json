@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.20",
             "options": {
                 "repo": "BurntSushi/ripgrep",
                 "binaryNames": "rg",
