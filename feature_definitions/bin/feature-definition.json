@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.20",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
             "options": {
                 "repo": "marcosnils/bin",
                 "binaryNames": "bin",
