@@ -67,7 +67,7 @@
     },
     "installsAfter": [],
     "dependencies": [],
-    "install_command": "release_tag_regex=$(if ! [[ -z $RELEASETAGREGEX ]]; then echo --release-tag-regex \"${RELEASETAGREGEX}\" ; fi)\nasset_regex_cmd=$(if ! [[ -z $ASSETREGEX ]]; then echo --asset-regex \"${ASSETREGEX}\" ; fi)\nlib_name_cmd=$(if ! [[ -z $LIBNAME ]]; then echo --lib-name \"${LIBNAME}\" ; fi)\n$nanolayer_location \\\n   install gh-release \\\n   \"$REPO\" \\\n   \"$BINARYNAMES\" --force \\\n   --version \"$VERSION\" --bin-location \"$BINLOCATION\"  --lib-location \"$LIBLOCATION\"  $asset_regex_cmd $lib_name_cmd $release_tag_regex",
+    "install_command": "release_tag_regex=$(if ! [ -z $RELEASETAGREGEX ]; then echo --release-tag-regex \"${RELEASETAGREGEX}\" ; fi)\nasset_regex_cmd=$(if ! [ -z $ASSETREGEX ]; then echo --asset-regex \"${ASSETREGEX}\" ; fi)\nlib_name_cmd=$(if ! [ -z $LIBNAME ]; then echo --lib-name \"${LIBNAME}\" ; fi)\n$nanolayer_location \\\n   install gh-release \\\n   \"$REPO\" \\\n   \"$BINARYNAMES\" --force \\\n   --version \"$VERSION\" --bin-location \"$BINLOCATION\"  --lib-location \"$LIBLOCATION\"  $asset_regex_cmd $lib_name_cmd $release_tag_regex",
     "test_scenarios": [
         {
             "name": "test_defaults_debian",
