@@ -1,0 +1,47 @@
+{
+    "id": "ruby-asdf",
+    "version": "0.0.1",
+    "name": "Ruby (via asdf)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/ruby-asdf",
+    "description": "Installs Ruby via asdf",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/asdf-package"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.6",
+            "options": {
+                "packages": "curl,ca-certificates,software-properties-common,build-essential,gnupg2,libreadline-dev,procps,dirmngr,gawk,autoconf,automake,bison,libffi-dev,libgdbm-dev,libncurses5-dev,libsqlite3-dev,libtool,libyaml-dev,pkg-config,sqlite3,zlib1g-dev,libgmp-dev,libssl-dev"
+            }
+        },
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/asdf-package:1.0.8",
+            "options": {
+                "plugin": "ruby",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "ruby --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
