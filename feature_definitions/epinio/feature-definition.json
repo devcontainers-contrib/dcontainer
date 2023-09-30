@@ -1,0 +1,42 @@
+{
+    "id": "epinio",
+    "version": "1.0.0",
+    "name": "Epinio (via Github Releases)",
+    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/epinio",
+    "description": "Epinio is an opinionated platform that runs on Kubernetes to take you from Code to URL in one step.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ],
+    "dependencies": [
+        {
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
+            "options": {
+                "repo": "epinio/epinio",
+                "binaryNames": "epinio",
+                "version": "$options.version"
+            }
+        }
+    ],
+    "install_command": "echo 'Done!'",
+    "test_scenarios": [
+        {
+            "name": "test_defaults_debian",
+            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "test_commands": [
+                "epinio --version"
+            ],
+            "options": {},
+            "features": {}
+        }
+    ]
+}
