@@ -1,6 +1,6 @@
 {
     "id": "duf",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "duf (Disk Usage/Free Utility) (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/duf",
     "description": "duf is a better 'df' alternative.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "muesli/duf",
                 "binaryNames": "duf",

@@ -1,6 +1,6 @@
 {
     "id": "terraformer",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "Terraformer (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/terraformer",
     "description": "Terraformer is a CLI tool to generate terraform files from existing infrastructure (reverse Terraform).",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "GoogleCloudPlatform/terraformer",
                 "binaryNames": "terraformer",

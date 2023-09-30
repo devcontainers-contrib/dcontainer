@@ -1,6 +1,6 @@
 {
     "id": "terraform-docs",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "terraform-docs (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/terraform-docs",
     "description": "terraform-docs is a utility to generate documentation from Terraform modules in various output formats.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "terraform-docs/terraform-docs",
                 "binaryNames": "terraform-docs",

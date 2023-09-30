@@ -1,6 +1,6 @@
 {
     "id": "spacectl",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "Spacelift CLI (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/spacectl",
     "description": "spacectl is a utility wrapping Spacelift's GraphQL API for easy programmatic access in command-line contexts - either in manual interactive mode (in your local shell), or in a predefined CI pipeline (GitHub actions, CircleCI, Jenkins etc).",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "spacelift-io/spacectl",
                 "binaryNames": "spacectl",

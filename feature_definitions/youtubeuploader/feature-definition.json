@@ -1,6 +1,6 @@
 {
     "id": "youtubeuploader",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "Youtube Uploader (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/youtubeuploader",
     "description": "Scripted uploads to Youtube.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "porjo/youtubeuploader",
                 "binaryNames": "youtubeuploader",

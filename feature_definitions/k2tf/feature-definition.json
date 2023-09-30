@@ -1,6 +1,6 @@
 {
     "id": "k2tf",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "k2tf (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/k2tf",
     "description": "k2tf is a tool for converting Kubernetes API Objects (in YAML format) into HashiCorp's Terraform configuration language.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "sl1pm4t/k2tf",
                 "binaryNames": "k2tf",

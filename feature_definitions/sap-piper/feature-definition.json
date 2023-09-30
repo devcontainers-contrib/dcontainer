@@ -1,6 +1,6 @@
 {
     "id": "sap-piper",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "name": "Project Piper (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/sap-piper",
     "description": "Piper offers default pipelines to easily implement CI/CD processes integrating SAP systems.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "SAP/jenkins-library",
                 "binaryNames": "piper",

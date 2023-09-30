@@ -1,6 +1,6 @@
 {
     "id": "tekton-cli",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "name": "Tekton CLI (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tekton-cli",
     "description": "The Tekton Pipelines CLI project provides a command-line interface (CLI) for interacting with Tekton, an open-source framework for Continuous Integration and Delivery (CI/CD) systems.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "tektoncd/cli",
                 "binaryNames": "tkn",

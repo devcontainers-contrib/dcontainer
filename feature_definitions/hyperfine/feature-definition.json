@@ -1,6 +1,6 @@
 {
     "id": "hyperfine",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "hyperfine (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/hyperfine",
     "description": "hyperfine is a command-line benchmarking tool.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "sharkdp/hyperfine",
                 "binaryNames": "hyperfine",

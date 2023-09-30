@@ -1,6 +1,6 @@
 {
     "id": "rclone",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "Rclone (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/rclone",
     "description": "Rclone ('rsync for cloud storage') is a command-line program to sync files and directories to and from different cloud storage providers.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "rclone/rclone",
                 "binaryNames": "rclone",

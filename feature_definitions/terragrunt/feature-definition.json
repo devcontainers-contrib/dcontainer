@@ -1,6 +1,6 @@
 {
     "id": "terragrunt",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "Terragrunt (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/terragrunt",
     "description": "Terragrunt is a thin wrapper that provides extra tools for keeping your configurations DRY, working with multiple Terraform modules, and managing remote state.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "gruntwork-io/terragrunt",
                 "binaryNames": "terragrunt",

@@ -31,6 +31,10 @@ def bump_version_feature_definitions(
     version_type: VersionType,
     depends_on: Optional[str] = None,
 ) -> None:
+    # normalize empty string
+    if not depends_on:
+        depends_on = None
+
     for feature_name in os.listdir(feature_definitions_dir):
         feature_definition_file = os.path.join(
             feature_definitions_dir, feature_name, "feature-definition.json"

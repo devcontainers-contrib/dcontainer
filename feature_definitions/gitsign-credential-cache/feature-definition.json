@@ -1,6 +1,6 @@
 {
     "id": "gitsign-credential-cache",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "name": "gitsign-credential-cache (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gitsign-credential-cache",
     "description": "gitsign-credential-cache is a optional helper binary that allows users to cache signing credentials.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "sigstore/gitsign",
                 "binaryNames": "gitsign-credential-cache",

@@ -1,6 +1,6 @@
 {
     "id": "bin",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "bin (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/bin",
     "description": "bin is an effortless binary manager. It manages binary files downloaded from different sources.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "marcosnils/bin",
                 "binaryNames": "bin",

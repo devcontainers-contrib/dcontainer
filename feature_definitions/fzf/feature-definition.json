@@ -1,6 +1,6 @@
 {
     "id": "fzf",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "fzf (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/fzf",
     "description": "fzf is a general-purpose command-line fuzzy finder.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "junegunn/fzf",
                 "binaryNames": "fzf",

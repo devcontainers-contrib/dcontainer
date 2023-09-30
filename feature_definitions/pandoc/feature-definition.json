@@ -1,6 +1,6 @@
 {
     "id": "pandoc",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "name": "Pandoc (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/pandoc",
     "description": "Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "jgm/pandoc",
                 "binaryNames": "pandoc",

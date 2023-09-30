@@ -1,6 +1,6 @@
 {
     "id": "age",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "name": "age (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/age",
     "description": "age is a simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "filosottile/age",
                 "binaryNames": "age",

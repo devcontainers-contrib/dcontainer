@@ -1,6 +1,6 @@
 {
     "id": "terracognita",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "TerraCognita (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/terracognita",
     "description": "TerraCognita is open-source software that quickly and automatically creates Terraform from all of your manually-provisioned resources.",
@@ -19,7 +19,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "cycloidio/terracognita",
                 "binaryNames": "terracognita",

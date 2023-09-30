@@ -1,6 +1,6 @@
 {
     "id": "kubectx-kubens",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "Kubectx and Kubens (via Github Releases)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/kubectx-kubens",
     "description": "kubectx is a tool to switch between contexts (clusters) on kubectl faster. kubens is a tool to switch between Kubernetes namespaces (and configure them for kubectl) easily.",
@@ -20,7 +20,7 @@
     ],
     "dependencies": [
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "ahmetb/kubectx",
                 "binaryNames": "kubectx",
@@ -29,7 +29,7 @@
             }
         },
         {
-            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.21",
+            "feature": "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23",
             "options": {
                 "repo": "ahmetb/kubectx",
                 "binaryNames": "kubens",
