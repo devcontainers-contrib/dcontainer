@@ -11,7 +11,19 @@
                 "env": {
                     "PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
                 },
-                "cwd": "${workspaceFolder}"
+                "cwd": "${input:workingDirectory}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "generate features",
+            "type": "shell",
+            "command": "python3 ./dev/generate_all_feature_definitions.py ${input:featureDefinitionsLocation} ${input:featuresLocation} ${input:nanolayerVersion} --depends-on ${input:dependsOn}",
+            "options": {
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
+                },
+                "cwd": "${input:workingDirectory}"
             },
             "problemMatcher": []
         }
@@ -36,12 +48,31 @@
           "type": "promptString",
           "default": "./feature_definitions"        
         },
+        {
+          "id": "featuresLocation",
+          "description": "featureDefinitionsLocation",
+          "type": "promptString",
+          "default": "../features"        
+        },
     
         {
           "id": "dependsOn",
           "description": "dependsOn",
           "type": "promptString",
           "default": ""        
+        },
+        {
+          "id": "nanolayerVersion",
+          "description": "nanolayerVersion",
+          "type": "promptString",
+          "default": "v0.5.4"        
+        },
+    
+        {
+          "id": "workingDirectory",
+          "description": "workingDirectory",
+          "type": "promptString",
+          "default": "${workspaceFolder}"        
         }
     
       ]
