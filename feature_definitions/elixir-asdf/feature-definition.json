@@ -51,8 +51,35 @@
     "install_command": "echo 'Done!'",
     "test_scenarios": [
         {
-            "name": "test",
-            "image": "mcr.microsoft.com/devcontainers/base:debian",
+            "name": "test_debian_11",
+            "image": "mcr.microsoft.com/devcontainers/base:debian-11",
+            "test_commands": [
+                "elixir --version"
+            ],
+            "options": {},
+            "features": {}
+        },
+        {
+            "name": "test_debian_12",
+            "image": "mcr.microsoft.com/devcontainers/base:debian-12",
+            "test_commands": [
+                "elixir --version"
+            ],
+            "options": {},
+            "features": {}
+        },
+        {
+            "name": "test_ubuntu_2004",
+            "image": "mcr.microsoft.com/devcontainers/base:ubuntu-20.04",
+            "test_commands": [
+                "elixir --version"
+            ],
+            "options": {},
+            "features": {}
+        },
+        {
+            "name": "test_ubuntu_2204",
+            "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
             "test_commands": [
                 "elixir --version"
             ],
