@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "name": "devcontainers CLI (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/devcontainers-cli",
-    "description": "The [devcontainers CLI](https://github.com/devcontainers/cli), which configures devcontainers from devcontainer.json. Requires the Docker client and access to a Docker engine socket (e.g. by mounting the host's Docker socket into the container)",
+    "description": "The devcontainers CLI, which configures devcontainers from devcontainer.json. Requires the Docker client and access to a Docker engine socket (e.g. by mounting the host's Docker socket into the container)",
     "options": {
         "version": {
             "default": "latest",
