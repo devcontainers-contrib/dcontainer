@@ -1,6 +1,6 @@
 {
     "id": "tfcdk-cli",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "Terraform CDK CLI (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tfcdk-cli",
     "description": "Cloud Development Kit for Terraform (CDKTF) allows you to use familiar programming languages to define and provision infrastructure. This gives you access to the entire Terraform ecosystem without learning HashiCorp Configuration Language (HCL) and lets you leverage the power of your existing toolchain for testing, dependency management, etc.",
@@ -15,7 +15,8 @@
         }
     },
     "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/npm-package"
+        "ghcr.io/devcontainers-contrib/features/npm-package",
+        "ghcr.io/devcontainers/features/node"
     ],
     "dependencies": [
         {
@@ -38,12 +39,14 @@
             "features": {}
         },
         {
-            "image": "mcr.microsoft.com/devcontainers/base:bullseye",
             "name": "test_specific_version",
+            "image": "mcr.microsoft.com/devcontainers/base:bullseye",
             "test_commands": [
                 "cdktf --version | grep 0.17.0"
             ],
-            "options": {"version": "0.17.0"},
+            "options": {
+                "version": "0.17.0"
+            },
             "features": {}
         }
     ]

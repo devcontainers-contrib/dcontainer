@@ -1,6 +1,6 @@
 {
     "id": "pnpm",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "name": "Pnpm (via npm)",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/pnpm",
     "description": "Pnpm is a fast and disk space efficient package manager.",
@@ -15,7 +15,8 @@
         }
     },
     "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/npm-package"
+        "ghcr.io/devcontainers-contrib/features/npm-package",
+        "ghcr.io/devcontainers/features/node"
     ],
     "dependencies": [
         {
@@ -43,7 +44,9 @@
             "test_commands": [
                 "pnpm -v | grep 7.26.3"
             ],
-            "options": { "version": "7.26.3"},
+            "options": {
+                "version": "7.26.3"
+            },
             "features": {}
         }
     ]
