@@ -1,6 +1,6 @@
 {
     "id": "gh-release",
-    "version": "1.0.24",
+    "version": "1.0.25",
     "name": "Github Release",
     "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/gh-release",
     "description": "Github Release feature will download, extract and add to path a release binary from a given repo",
@@ -154,6 +154,18 @@
                 "binaryNames": "extractor",
                 "assetRegex": "^extractor\\.linux-.+\\.exe$",
                 "additionalFlags": "--no-filter-assets-by-platform"
+            }
+        },
+        {
+            "name": "test_no_git",
+            "image": "ubuntu",
+            "test_commands": [
+                "aztfexport --version"
+            ],
+            "options": {
+                "version": "latest",
+                "repo": "Azure/aztfexport",
+                "binaryNames": "aztfexport"
             }
         }
     ]
